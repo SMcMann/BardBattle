@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public float forwardForce = 100f;
     public float sidewaysForce = 500f;
     // Start is called before the first frame update
-    public Vector2 speed = new Vector2(50, 50);
+    public Vector2 speed = new Vector2(1, 1);
 
     // Update is called once per frame
     void Update()
