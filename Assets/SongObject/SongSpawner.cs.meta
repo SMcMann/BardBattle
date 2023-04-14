@@ -3,7 +3,10 @@ guid: 8f95ace5cdcf0c24ebaee18205cd251e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Song: {instanceID: 0}
+  - textBox: {instanceID: 0}
+  - songPromptInstance: {fileID: 3463219658445780855, guid: 5b67a63508b99cd4b8bf4f0f70f8b8a8, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

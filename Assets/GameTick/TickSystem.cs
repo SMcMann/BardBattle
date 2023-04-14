@@ -23,6 +23,6 @@ public class TickSystem : MonoBehaviour
       tick++;
       // if (onTick !== null) onTick(this, new OnTickEventArgs { tick = tick });
 
-      Debug.Log("tick: " + tick);
+      // Debug.Log("tick: " + tick);
   }
 }

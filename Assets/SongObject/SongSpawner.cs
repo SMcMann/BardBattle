@@ -13,7 +13,9 @@ public class SongSpawner : MonoBehaviour
     private enum State { Ready, Playing, Cooldown }
     private State currentState = State.Ready;
     private AudioSource audioSource;
-    private GameObject songPromptInstance;
+    public GameObject songPromptInstance;
+
+    private bool spawedPrompt = false;
     
     // Start is called before the first frame update
     void Start()
@@ -29,16 +31,18 @@ public class SongSpawner : MonoBehaviour
 
         bool playerCloseEnough = Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
 
-        if (playerCloseEnough)
-    {
-        Debug.Log("Text box should be active now");
-        textBox.gameObject.SetActive(true);
-    }
-    else
-    {
-        Debug.Log("Text box should be inactive now");
-        textBox.gameObject.SetActive(false);
-    }
+        if (playerCloseEnough && !spawedPrompt)
+        {
+            Debug.Log("Text box should be active now");
+            var offset = new Vector3(0f, 2f, 0);
+            Instantiate(songPromptInstance, transform.position + offset, transform.rotation);
+            spawedPrompt = true;
+            // textBox.gameObject.SetActive(true);
+        }
+        else if (!playerCloseEnough && spawedPrompt)
+        {
+            spawedPrompt = false;
+        }
 
         if (playerCloseEnough && Input.GetButtonDown("Jump"))
         {
@@ -69,8 +73,8 @@ public class SongSpawner : MonoBehaviour
     {
         if (songPromptInstance == null)
         {
-            var offset = new Vector3(0.5f, 0.5f, 0);
-            songPromptInstance = Instantiate(Song, transform.position + offset, transform.rotation);
+            
+           // songPromptInstance = Instantiate(Song, transform.position + offset, transform.rotation);
             AudioClip songClip = Song.GetComponent<AudioSource>().clip;
             audioSource.PlayOneShot(songClip);
         }
@@ -79,7 +83,7 @@ public class SongSpawner : MonoBehaviour
     void StopSongPrompt()
     {
         audioSource.Stop();
-        Destroy(songPromptInstance);
-        songPromptInstance = null;
+       // Destroy(songPromptInstance);
+       // songPromptInstance = null;
     }
 }
