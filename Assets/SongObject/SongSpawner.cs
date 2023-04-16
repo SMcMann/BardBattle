@@ -46,10 +46,12 @@ public class SongSpawner : MonoBehaviour
 
         if (playerCloseEnough && Input.GetButtonDown("Jump"))
         {
+            Debug.Log(currentState);
             if (currentState == State.Ready)
             {
-                SpawnSongPrompt();
+                SpawnSong();
                 currentState = State.Playing;
+                Destroy(songPromptInstance);
             }
             else if (currentState == State.Playing)
             {
@@ -69,15 +71,10 @@ public class SongSpawner : MonoBehaviour
         }
     }
 
-    void SpawnSongPrompt()
+    void SpawnSong()
     {
-        if (songPromptInstance == null)
-        {
-            
-           // songPromptInstance = Instantiate(Song, transform.position + offset, transform.rotation);
-            AudioClip songClip = Song.GetComponent<AudioSource>().clip;
-            audioSource.PlayOneShot(songClip);
-        }
+        // 1) get Song from server
+        // 2) Spawn Song
     }
 
     void StopSongPrompt()

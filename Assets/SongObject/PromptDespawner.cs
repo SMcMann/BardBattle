@@ -17,10 +17,8 @@ public class PromptDespawner : MonoBehaviour
     {
         player = GameObject.Find("Player");
         bool playerCloseEnough = Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 4;
-        Debug.Log(Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.y), new Vector2(transform.position.x, transform.position.y)));
         if (!playerCloseEnough)
         {
-            Debug.Log("SEEYA");
             Destroy(songPromptInstance);
         }
     }

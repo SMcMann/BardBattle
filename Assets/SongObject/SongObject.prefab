@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7919331191007419537}
   - component: {fileID: 6843489588810165317}
-  - component: {fileID: 7396662736192682968}
   m_Layer: 0
   m_Name: SongObject
   m_TagString: Untagged
@@ -90,15 +89,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7396662736192682968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5114430811386421178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a86b7387710606f4dae1deede8abebaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
