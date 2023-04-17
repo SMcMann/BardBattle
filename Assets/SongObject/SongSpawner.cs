@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using PlayFab;
+using PlayFab.ClientModels;
+using System;
+
+
 
 public class SongSpawner : MonoBehaviour
 {
@@ -22,7 +27,31 @@ public class SongSpawner : MonoBehaviour
     {
         textBox.gameObject.SetActive(false);
         audioSource = GetComponent<AudioSource>();
+
+        // Log in to PlayFab
+        LoginToPlayFab();
     }
+
+     void LoginToPlayFab()
+    {
+        string customId = SystemInfo.deviceUniqueIdentifier;
+        Debug.Log("Custom ID: " + customId);
+
+        var request = new LoginWithCustomIDRequest { CustomId = customId, CreateAccount = true };
+        PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginFailure);
+    }
+
+
+    private void OnLoginSuccess(LoginResult result)
+    {
+        Debug.Log("Logged in successfully to PlayFab!");
+    }
+
+    private void OnLoginFailure(PlayFabError error)
+    {
+        Debug.LogError($"Error logging in to PlayFab: {error.GenerateErrorReport()}");
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -68,13 +97,80 @@ public class SongSpawner : MonoBehaviour
         }
     }
 
+    void GetSongData(string songKey, Action<Song> onSuccess, Action<PlayFabError> onError)
+    {
+        var request = new GetTitleDataRequest { Keys = new List<string>() { songKey } };
+
+        PlayFabClientAPI.GetTitleData(request, result =>
+        {
+            // Deserialize the song data from the result
+            string songJson = result.Data[songKey];
+            Song song = JsonUtility.FromJson<Song>(songJson);
+
+            // Log the song data to the console
+            Debug.Log("Song Name: " + song.name);
+            foreach (var note in song.notes)
+            {
+                Debug.Log("Note Name: " + note.name);
+                Debug.Log("Note Length: " + note.noteLength); // change "length" to "noteLength"
+                Debug.Log("Note Input: " + note.input);
+            }
+
+
+            // Invoke the success callback with the song object
+            onSuccess.Invoke(song);
+
+        }, error =>
+        {
+            Debug.LogError(error);
+            onError.Invoke(error);
+        });
+    }
+
+
+    
+
     void SpawnSong()
     {
-        // 1) get Song from server
-        // 2) Spawn Song
-        var offset = new Vector3(0f, 2f, 0);
-        Instantiate(Song, transform.position + offset, transform.rotation);
+        // 1) Get Song from server
+        string songKey = "Song1";
+        GetSongData(songKey, song =>
+        {
+            // Spawn the Song instance with the fetched song data
+            SpawnSongInstance(song);
+        },
+        error =>
+        {
+            Debug.LogError(error);
+        });
     }
+
+    void SpawnSongInstance(Song fetchedSong)
+    {
+        // Check if the fetchedSong is null
+        if (fetchedSong == null)
+        {
+            Debug.LogError("Cannot spawn null song!");
+            return;
+        }
+
+        // Spawn Song
+        var offset = new Vector3(0f, 2f, 0);
+        var songInstance = Instantiate(Song, transform.position + offset, transform.rotation);
+        // var songController = songInstance.GetComponent<SongController>();
+
+        // // Check if the songController is null
+        // if (songController == null)
+        // {
+        //     Debug.LogError("SongController is not found in the Song prefab!");
+        //     return;
+        // }
+
+        // songController.song = fetchedSong;
+        Debug.Log("Spawned song: " + fetchedSong.name);
+    }
+
+
 
     void StopSongPrompt()
     {
