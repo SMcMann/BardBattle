@@ -33,10 +33,9 @@ public class SongSpawner : MonoBehaviour
 
         if (playerCloseEnough && !spawedPrompt)
         {
-            Debug.Log("Text box should be active now");
             var offset = new Vector3(0f, 2f, 0);
-            Instantiate(songPromptInstance, transform.position + offset, transform.rotation);
-            spawedPrompt = true;
+            // Instantiate(songPromptInstance, transform.position + offset, transform.rotation);
+            // spawedPrompt = true;
             // textBox.gameObject.SetActive(true);
         }
         else if (!playerCloseEnough && spawedPrompt)
@@ -46,12 +45,10 @@ public class SongSpawner : MonoBehaviour
 
         if (playerCloseEnough && Input.GetButtonDown("Jump"))
         {
-            Debug.Log(currentState);
             if (currentState == State.Ready)
             {
                 SpawnSong();
                 currentState = State.Playing;
-                Destroy(songPromptInstance);
             }
             else if (currentState == State.Playing)
             {
@@ -75,6 +72,8 @@ public class SongSpawner : MonoBehaviour
     {
         // 1) get Song from server
         // 2) Spawn Song
+        var offset = new Vector3(0f, 2f, 0);
+        Instantiate(Song, transform.position + offset, transform.rotation);
     }
 
     void StopSongPrompt()

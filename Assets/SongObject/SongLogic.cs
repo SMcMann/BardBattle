@@ -4,22 +4,43 @@ using UnityEngine;
 
 public class SongLogic : MonoBehaviour
 {
-
+    public Note nooote;
     private struct testNote {
-        string expectedInput;    
+        string expectedInput;
+        int noteLength;
+        string name;
     };
+
+    private Note[] test;
+    public GameObject gameTick;
+
     // Start is called before the first frame update
     void Start()
     {
-        // spawn backdrop and potition notes
-        // spawn scroller
+        Debug.Log("SPAWNINGGGG");
+        TickSystem ticker = gameTick.GetComponent<TickSystem>();
+        test = new Note[] { nooote, nooote, nooote, };
+        var offset = new Vector3(0f, 2f, 0);
+        for (int i=0; i < 3; i++)
+        {
+            Debug.Log(test[i]);
+            // test[i].noteName = "";
+            var n = Instantiate(nooote, transform.position + offset, transform.rotation);
+            n.noteName = "aaaa";
 
-        // set current note and when input is expected
+            offset += new Vector3(0, 2, 0);
+        }
+        Debug.Log(ticker.getTick());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void testFunction(int x)
+    {
+        Debug.Log(x);
     }
 }

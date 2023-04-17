@@ -25,4 +25,9 @@ public class TickSystem : MonoBehaviour
 
       // Debug.Log("tick: " + tick);
   }
+
+    public int getTick()
+    {
+        return tick;
+    }
 }
