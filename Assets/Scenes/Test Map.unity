@@ -623,6 +623,7 @@ MonoBehaviour:
   forwardForce: 100
   sidewaysForce: 500
   speed: {x: 7, y: 7}
+  animator: {fileID: 1366923982}
 --- !u!50 &1366923981
 Rigidbody2D:
   serializedVersion: 4
