@@ -7,10 +7,10 @@ public class MainMenus : MonoBehaviour
 {
             public void  PlayGame ()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("CharacterSelect");
     }
     public void PlayGame2()
     {
-        SceneManager.LoadScene("Game2");
+        SceneManager.LoadScene("Testmap");
     }
 }

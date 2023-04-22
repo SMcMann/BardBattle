@@ -14,6 +14,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+        {
+
+        
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
         animator.SetFloat("Horizontal", inputX);
@@ -36,5 +40,6 @@ public class Movement : MonoBehaviour
         movement *= Time.deltaTime;
 
         transform.Translate(movement);
+        }
     }
 }
