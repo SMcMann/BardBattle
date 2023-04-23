@@ -2,12 +2,13 @@
   "scopedRegistries": [
     {
       "name": "Packages from jillejr",
-      "url": "https://npm.cloudsmith.io/jillejr/newtonsoft-json-for-unity/",
-      "scopes": ["jillejr"]
+      "url": "https://npm.cloudsmith.io/jillejr/newtonsoft-json-for-unity",
+      "scopes": [
+        "jillejr"
+      ]
     }
   ],
   "dependencies": {
-    "jillejr.newtonsoft.json-for-unity": "12.0.201",
     "com.unity.collab-proxy": "2.0.0",
     "com.unity.feature.2d": "1.0.0",
     "com.unity.ide.rider": "3.0.18",
@@ -18,6 +19,7 @@
     "com.unity.timeline": "1.6.4",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.8.0",
+    "jillejr.newtonsoft.json-for-unity": "12.0.201",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",

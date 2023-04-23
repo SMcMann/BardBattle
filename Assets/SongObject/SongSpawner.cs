@@ -7,7 +7,6 @@ using PlayFab.ClientModels;
 using System;
 
 
-
 public class SongSpawner : MonoBehaviour
 {
     private GameObject player;
@@ -19,6 +18,8 @@ public class SongSpawner : MonoBehaviour
     private State currentState = State.Ready;
     private AudioSource audioSource;
     public GameObject songPromptInstance;
+    public string switchGroup = "SwitchGroupName";
+    public string switchState = "SwitchStateName";
 
     private bool spawedPrompt = false;
     
@@ -74,6 +75,9 @@ public class SongSpawner : MonoBehaviour
 
         if (playerCloseEnough && Input.GetButtonDown("Jump"))
         {
+            // Set the Wwise Switch
+            AkSoundEngine.SetSwitch(switchGroup, switchState, this.gameObject);
+
             if (currentState == State.Ready)
             {
                 SpawnSong();
