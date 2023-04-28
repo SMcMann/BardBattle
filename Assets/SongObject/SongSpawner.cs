@@ -182,4 +182,9 @@ public class SongSpawner : MonoBehaviour
        // Destroy(songPromptInstance);
        // songPromptInstance = null;
     }
+
+    public void SpawnNoteAndCheckInput(string userCueName)
+    {
+        // Your implementation for spawning notes and checking user input
+    }
 }
