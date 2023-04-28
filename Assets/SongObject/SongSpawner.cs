@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using PlayFab;
-using PlayFab.ClientModels;
-using System;
-
+using AK.Wwise;
 
 public class SongSpawner : MonoBehaviour
 {
+    public static SongSpawner Instance;
     private GameObject player;
     public GameObject Song;
     public TMPro.TextMeshProUGUI textBox;
@@ -18,41 +16,34 @@ public class SongSpawner : MonoBehaviour
     private State currentState = State.Ready;
     private AudioSource audioSource;
     public GameObject songPromptInstance;
-    public string switchGroup = "SwitchGroupName";
-    public string switchState = "SwitchStateName";
+    private bool isChallengeActive;
+    private float challengeTimer;
+    private int playerPoints;
+    public GameObject buttonsContainer;
+    public Switch MelodySwitch;
 
     private bool spawedPrompt = false;
     
+     private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
         textBox.gameObject.SetActive(false);
         audioSource = GetComponent<AudioSource>();
-
-        // Log in to PlayFab
-        LoginToPlayFab();
     }
-
-     void LoginToPlayFab()
-    {
-        string customId = SystemInfo.deviceUniqueIdentifier;
-        Debug.Log("Custom ID: " + customId);
-
-        var request = new LoginWithCustomIDRequest { CustomId = customId, CreateAccount = true };
-        PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginFailure);
-    }
-
-
-    private void OnLoginSuccess(LoginResult result)
-    {
-        Debug.Log("Logged in successfully to PlayFab!");
-    }
-
-    private void OnLoginFailure(PlayFabError error)
-    {
-        Debug.LogError($"Error logging in to PlayFab: {error.GenerateErrorReport()}");
-    }
-
 
     // Update is called once per frame
     void Update()
@@ -75,12 +66,9 @@ public class SongSpawner : MonoBehaviour
 
         if (playerCloseEnough && Input.GetButtonDown("Jump"))
         {
-            // Set the Wwise Switch
-            AkSoundEngine.SetSwitch(switchGroup, switchState, this.gameObject);
-
             if (currentState == State.Ready)
             {
-                SpawnSong();
+                SpawnSong(1); // Temporary placeholder value for the melodyNumber 
                 currentState = State.Playing;
             }
             else if (currentState == State.Playing)
@@ -99,92 +87,67 @@ public class SongSpawner : MonoBehaviour
                 cooldownTimer = 0f;
             }
         }
-    }
 
-    void GetSongData(string songKey, Action<Song> onSuccess, Action<PlayFabError> onError)
-    {
-        var request = new GetTitleDataRequest { Keys = new List<string>() { songKey } };
-
-        PlayFabClientAPI.GetTitleData(request, result =>
+        if (isChallengeActive)
         {
-            // Deserialize the song data from the result
-            string songJson = result.Data[songKey];
-            Song song = JsonUtility.FromJson<Song>(songJson);
+            challengeTimer -= Time.deltaTime;
 
-            // Log the song data to the console
-            Debug.Log("Song Name: " + song.name);
-            foreach (var note in song.notes)
+            // Check for player input here and update playerPoints accordingly
+
+            if (challengeTimer <= 0)
             {
-                Debug.Log("Note Name: " + note.name);
-                Debug.Log("Note Length: " + note.noteLength); // change "length" to "noteLength"
-                Debug.Log("Note Input: " + note.input);
+                isChallengeActive = false;
+                EndChallenge();
             }
-
-
-            // Invoke the success callback with the song object
-            onSuccess.Invoke(song);
-
-        }, error =>
-        {
-            Debug.LogError(error);
-            onError.Invoke(error);
-        });
-    }
-
-
-    
-
-    void SpawnSong()
-    {
-        // 1) Get Song from server
-        string songKey = "Song1";
-        GetSongData(songKey, song =>
-        {
-            // Spawn the Song instance with the fetched song data
-            SpawnSongInstance(song);
-        },
-        error =>
-        {
-            Debug.LogError(error);
-        });
-    }
-
-    void SpawnSongInstance(Song fetchedSong)
-    {
-        // Check if the fetchedSong is null
-        if (fetchedSong == null)
-        {
-            Debug.LogError("Cannot spawn null song!");
-            return;
         }
-
-        // Spawn Song
-        var offset = new Vector3(0f, 2f, 0);
-        var songInstance = Instantiate(Song, transform.position + offset, transform.rotation);
-        // var songController = songInstance.GetComponent<SongController>();
-
-        // // Check if the songController is null
-        // if (songController == null)
-        // {
-        //     Debug.LogError("SongController is not found in the Song prefab!");
-        //     return;
-        // }
-
-        // songController.song = fetchedSong;
-        Debug.Log("Spawned song: " + fetchedSong.name);
     }
 
+    public void SpawnSong(int melodyNumber)
+    {
+        // 1) get Song from server
+        // 2) Spawn Song
+        var offset = new Vector3(0f, 2f, 0);
+        Instantiate(Song, transform.position + offset, transform.rotation);
+
+         // Set the Wwise Switch for the melody to play
+        // MelodySwitch.SetValue(gameObject, melodyNumber);
+
+        // Start the challenge
+        isChallengeActive = true;
+        challengeTimer = 60f; // Set the challenge duration
+        playerPoints = 0;
+        // buttonsContainer.SetActive(true);
+
+        // Post the Wwise Event to play the challenge song
+        AkSoundEngine.PostEvent("Play_Challenge_Song", gameObject);
+    }
+
+    void EndChallenge()
+    {
+        // Disable and hide buttons for the song challenge
+        // buttonsContainer.SetActive(false);
+
+        // Stop the challenge song
+        audioSource.Stop();
+
+        // Collect the points
+        CollectPoints();
+    }
+
+void CollectPoints()
+{
+    // Add the player's points from this challenge to their total score
+    // Use the 'playerPoints' variable to update the player's score or fame points
+}
 
 
     void StopSongPrompt()
     {
         audioSource.Stop();
+        // Post the Wwise Event to stop the challenge song
+        AkSoundEngine.PostEvent("Stop_Challenge_Song", gameObject);
+
        // Destroy(songPromptInstance);
        // songPromptInstance = null;
-    }
-
-    public void SpawnNoteAndCheckInput(string userCueName)
-    {
-        // Your implementation for spawning notes and checking user input
     }
 }

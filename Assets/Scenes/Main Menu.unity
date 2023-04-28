@@ -123,6 +123,77 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34518890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34518892}
+  - component: {fileID: 34518893}
+  m_Layer: 0
+  m_Name: GameStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &34518892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34518890}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40.6, y: -16.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34518893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34518890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2ef6b590ee8aa46a1f3e0931bd6535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentGameState: 0
+  OnIdleEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnIdleExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayingSongChallengeEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayingSongChallengeExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSongSpawningTimerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSongSpawningTimerExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnVictoryEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  playerFame: 0
+  victoryFame: 0
+  challengeTimer: 0
+  songSpawningTimer: 0
+  songSpawner: {fileID: 0}
 --- !u!1 &61860932
 GameObject:
   m_ObjectHideFlags: 0
