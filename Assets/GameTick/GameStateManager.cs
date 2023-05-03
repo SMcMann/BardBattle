@@ -11,7 +11,8 @@ public class GameStateManager : MonoBehaviour
     public UnityEvent OnPlayingSongChallengeEnter, OnPlayingSongChallengeExit;
     public UnityEvent OnSongSpawningTimerEnter, OnSongSpawningTimerExit;
     public UnityEvent OnVictoryEnter;
-    public int playerFame;
+    public int player1Fame;
+    public int player2Fame;
     public int victoryFame;
     public float challengeTimer;
     public float songSpawningTimer;
@@ -105,14 +106,29 @@ public class GameStateManager : MonoBehaviour
         CurrentGameState = GameState.Challenge;
     }
 
-    // handle button presses during the song challenge
+    // handle button presses during the song challenge player1Fame
     public void OnNoteButtonPressed(bool success)
     {
         if (CurrentGameState != GameState.PlayingSongChallenge) return;
 
         if (success)
         {
-            playerFame++;
+            player1Fame++;
+            // Send good signal to Wwise
+        }
+        else
+        {
+            // Send bad signal to Wwise
+        }
+    }
+    // handle button presses during the song challenge player2Fame
+    public void OnNoteButtonPressedPlayer2(bool success)
+    {
+        if (CurrentGameState != GameState.PlayingSongChallenge) return;
+
+        if (success)
+        {
+            player2Fame++;
             // Send good signal to Wwise
         }
         else
@@ -121,12 +137,14 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    // New function to check for victory conditions
+
+    // Check for victory conditions
     private void CheckForVictory()
     {
-        if (playerFame >= victoryFame)
+        if (player1Fame >= victoryFame || player2Fame >= victoryFame)
         {
             ChangeState(GameState.Victory);
         }
     }
+
 }
