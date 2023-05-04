@@ -14,12 +14,30 @@ public class SecondPlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
+        
         {
 
+            float inputX = 0f;
+            float inputY = 0f;
 
-            float inputX = Input.GetAxis("Horizontal");
-            float inputY = Input.GetAxis("Vertical");
+            if (Input.GetKey(KeyCode.A))
+            {
+                inputX = -1f;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                inputX = 1f;
+            }
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                inputY = 1f;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                inputY = -1f;
+            }
+
             animator.SetFloat("Horizontal", inputX);
             if (inputX != 0)
             {
