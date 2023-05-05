@@ -53,3 +53,5 @@ public class PlayerActivity : MonoBehaviour
 }
 
 //AkSoundEngine.PostEvent("GameMusicControl", gameObject);
+//AkSoundEngine.SetSwitch("TestPlayer1Melodies", "Silence", gameObject);
+//AkSoundEngine.PostEvent("GameMusicControl", gameObject);
