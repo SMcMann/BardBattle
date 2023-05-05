@@ -27,13 +27,12 @@ public class PlayerActivity : MonoBehaviour
             if (isSilent)
             {
                 // Stop the "silence" switch
-                AkSoundEngine.SetSwitch("silence", "Off", gameObject);
+                AkSoundEngine.SetSwitch("TestPlayer1Melodies", "Test1", gameObject);
                 Debug.Log("Test1 On");
-                Debug.Log("Silence Off");         
                 isSilent = false;
                 AkSoundEngine.PostEvent("GameMusicControl", gameObject);
             }
-            AkSoundEngine.SetSwitch("test1", "On", gameObject);
+            AkSoundEngine.SetSwitch("TestPlayer1Melodies", "Silence", gameObject);
         }
         else
         {
@@ -41,17 +40,16 @@ public class PlayerActivity : MonoBehaviour
             if (!isSilent)
             {
                 // Stop the "test1" switch
-                AkSoundEngine.SetSwitch("test1", "Off", gameObject);
-                Debug.Log("Test1 Off");
+                AkSoundEngine.SetSwitch("TestPlayer1Melodies", "Silence", gameObject);
                 Debug.Log("Silence On");
                 isSilent = true;
 
             }
-            AkSoundEngine.SetSwitch("silence", "On", gameObject);
+            AkSoundEngine.SetSwitch("TestPlayer1Melodies", "Test1", gameObject);
         }
     }
 }
 
-//AkSoundEngine.PostEvent("GameMusicControl", gameObject);
+
 //AkSoundEngine.SetSwitch("TestPlayer1Melodies", "Silence", gameObject);
 //AkSoundEngine.PostEvent("GameMusicControl", gameObject);
