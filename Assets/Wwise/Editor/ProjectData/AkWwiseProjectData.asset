@@ -408,7 +408,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: df10089b3818614689045b0b08155d2c
     GuidInternal: 
-    m_lastTime: -8585192272564267294
+    m_lastTime: -8585185082405915581
     List:
     - name: TestPlayer1Instrument
       guid: d8deb4dfff6c1e4b8438b9b25c284820
@@ -425,6 +425,22 @@ MonoBehaviour:
         guid: d8deb4dfff6c1e4b8438b9b25c284820
       Path: Switches\Default Work Unit\TestPlayer1Instrument
       values:
+      - name: Lute
+        guid: 10668ada5eea644dad921dec2972eeda
+        id: 241555877
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: TestPlayer1Instrument
+          ObjectType: 11
+          guid: d8deb4dfff6c1e4b8438b9b25c284820
+        - ElementName: Lute
+          ObjectType: 10
+          guid: 10668ada5eea644dad921dec2972eeda
       - name: Piano
         guid: ee1542c19161d44fa67c9389e99fdda7
         id: 1324340420
@@ -491,6 +507,22 @@ MonoBehaviour:
         - ElementName: Test1
           ObjectType: 10
           guid: 23b993500b7efb46adfd20b4d269e095
+      - name: Test2_Real
+        guid: 4288dbab74ba4643ab01d36ef61091bf
+        id: 4007995432
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: TestPlayer1Melodies
+          ObjectType: 11
+          guid: ef6ac369442e8348b1ff5d4f1d1c6915
+        - ElementName: Test2_Real
+          ObjectType: 10
+          guid: 4288dbab74ba4643ab01d36ef61091bf
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -508,8 +540,8 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585192274306795033
     List: []
-  ExpandedFileSystemItemIds: 02000000030000000d00000011000000120000001a0000001b00000021000000
-  ExpandedWaapiItemIds: 020000000d000000
+  ExpandedFileSystemItemIds: 020000000d000000110000001200000013000000160000001d000000
+  ExpandedWaapiItemIds: 1c0000001d000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 1

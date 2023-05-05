@@ -29,8 +29,9 @@ public class PlayerActivity : MonoBehaviour
                 // Stop the "silence" switch
                 AkSoundEngine.SetSwitch("silence", "Off", gameObject);
                 Debug.Log("Test1 On");
-                Debug.Log("Silence Off");
+                Debug.Log("Silence Off");         
                 isSilent = false;
+                AkSoundEngine.PostEvent("GameMusicControl", gameObject);
             }
             AkSoundEngine.SetSwitch("test1", "On", gameObject);
         }
@@ -44,8 +45,11 @@ public class PlayerActivity : MonoBehaviour
                 Debug.Log("Test1 Off");
                 Debug.Log("Silence On");
                 isSilent = true;
+
             }
             AkSoundEngine.SetSwitch("silence", "On", gameObject);
         }
     }
 }
+
+//AkSoundEngine.PostEvent("GameMusicControl", gameObject);
