@@ -14,13 +14,11 @@ public class SongSpawner : MonoBehaviour
     private float cooldownTimer = 0f;
     private enum State { Ready, Playing, Cooldown }
     private State currentState = State.Ready;
-    private AudioSource audioSource;
     public GameObject songPromptInstance;
     private bool isChallengeActive;
     private float challengeTimer;
     private int playerPoints;
     public GameObject buttonsContainer;
-    public Switch MelodySwitch;
 
     private bool spawedPrompt = false;
     
@@ -42,7 +40,6 @@ public class SongSpawner : MonoBehaviour
     void Start()
     {
         textBox.gameObject.SetActive(false);
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -107,7 +104,7 @@ public class SongSpawner : MonoBehaviour
         // 1) get Song from server
         // 2) Spawn Song
         var offset = new Vector3(0f, 2f, 0);
-        Instantiate(Song, transform.position + offset, transform.rotation);
+        // Instantiate(Song, transform.position + offset, transform.rotation);
 
          // Set the Wwise Switch for the melody to play
         // MelodySwitch.SetValue(gameObject, melodyNumber);
@@ -119,7 +116,7 @@ public class SongSpawner : MonoBehaviour
         // buttonsContainer.SetActive(true);
 
         // Post the Wwise Event to play the challenge song
-        AkSoundEngine.PostEvent("Play_Challenge_Song", gameObject);
+        AkSoundEngine.PostEvent("GameMusicControl", gameObject);
     }
 
     void EndChallenge()
@@ -128,8 +125,6 @@ public class SongSpawner : MonoBehaviour
         // buttonsContainer.SetActive(false);
 
         // Stop the challenge song
-        audioSource.Stop();
-
         // Collect the points
         CollectPoints();
     }
@@ -143,9 +138,8 @@ void CollectPoints()
 
     void StopSongPrompt()
     {
-        audioSource.Stop();
         // Post the Wwise Event to stop the challenge song
-        AkSoundEngine.PostEvent("Stop_Challenge_Song", gameObject);
+        AkSoundEngine.PostEvent("GameMusicControl", gameObject);
 
        // Destroy(songPromptInstance);
        // songPromptInstance = null;
