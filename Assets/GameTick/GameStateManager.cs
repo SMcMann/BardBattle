@@ -11,9 +11,9 @@ public class GameStateManager : MonoBehaviour
     public UnityEvent OnPlayingSongChallengeEnter, OnPlayingSongChallengeExit;
     public UnityEvent OnSongSpawningTimerEnter, OnSongSpawningTimerExit;
     public UnityEvent OnVictoryEnter;
-    public int player1Fame;
-    public int player2Fame;
-    public int victoryFame;
+    public static int player1Fame;
+    public static int player2Fame;
+    public static int victoryFame;
     public float challengeTimer;
     public float songSpawningTimer;
     [SerializeField] private SongSpawner songSpawner;

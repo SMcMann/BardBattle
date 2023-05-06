@@ -17,6 +17,8 @@ public class ToggleOn : MonoBehaviour
             MainMenus.p1goblin = true;
             MainMenus.p1tiefling = false;
             Debug.Log(MainMenus.p1goblin);
+            GameStateManager.player1Fame += 10;
+            Debug.Log(GameStateManager.player1Fame);
             Debug.Log(MainMenus.p1tiefling);
 
     }
