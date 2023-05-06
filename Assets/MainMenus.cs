@@ -5,12 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenus : MonoBehaviour
 {
-            public void  PlayGame ()
+    public static bool p1tiefling = false;
+    public static bool p1goblin = false;
+    public static bool p2tiefling = false;
+    public static bool p2goblin = false;
+    public void  PlayGame ()
     {
+        p1goblin = true;
+        p2tiefling = true;
+        Debug.Log(p2goblin);
+        Debug.Log(p2tiefling);
         SceneManager.LoadScene("CharacterSelect");
+        
     }
     public void PlayGame2()
     {
+        
+        
         SceneManager.LoadScene("Testmap");
+
     }
 }

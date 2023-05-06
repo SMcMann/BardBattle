@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ToggleOn : MonoBehaviour
+public class ToggleOnP2 : MonoBehaviour
 {
     
     public GameObject playergoblin;
@@ -14,19 +14,19 @@ public class ToggleOn : MonoBehaviour
         {
             playergoblin.SetActive(false);
             playertiefling.SetActive(true);
-            MainMenus.p1goblin = false;
-            MainMenus.p1tiefling = true;
-            Debug.Log(MainMenus.p1goblin);
-            Debug.Log(MainMenus.p1tiefling);
+            MainMenus.p2goblin = false;
+            MainMenus.p2tiefling = true;
+            Debug.Log(MainMenus.p2goblin);
+            Debug.Log(MainMenus.p2tiefling);
         }
         else if (playergoblin.activeInHierarchy == false)
         {
             playergoblin.SetActive(true);
             playertiefling.SetActive(false);
-            MainMenus.p1goblin = true;
-            MainMenus.p1tiefling = false;
-            Debug.Log(MainMenus.p1goblin);
-            Debug.Log(MainMenus.p1tiefling);
+            MainMenus.p2goblin = true;
+            MainMenus.p2tiefling = false;
+            Debug.Log(MainMenus.p2goblin);
+            Debug.Log(MainMenus.p2tiefling);
         }
     }
 
