@@ -8,6 +8,19 @@ public class ToggleOn : MonoBehaviour
     
     public GameObject playergoblin;
     public GameObject playertiefling;
+
+    private void Awake()
+    {
+        // Set default values
+        playergoblin.SetActive(true);
+            playertiefling.SetActive(false);
+            MainMenus.p1goblin = true;
+            MainMenus.p1tiefling = false;
+            Debug.Log(MainMenus.p1goblin);
+            Debug.Log(MainMenus.p1tiefling);
+
+    }
+    
     public void SwitchImages()
     {
         if (playergoblin.activeInHierarchy == true)
