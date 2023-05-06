@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 52665238}
   - component: {fileID: 52665237}
   - component: {fileID: 52665239}
-  - component: {fileID: 52665240}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -274,19 +273,6 @@ MonoBehaviour:
   p2goblins_thumbnail: {fileID: 816786994}
   p2tieflings: {fileID: 1791770087}
   p2tieflings_thumbnail: {fileID: 1943112767}
---- !u!114 &52665240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52665232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af2af994af83c9d4fb97d3d228a1fcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 844443783}
 --- !u!1 &308807135
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +285,6 @@ GameObject:
   - component: {fileID: 308807138}
   - component: {fileID: 308807137}
   - component: {fileID: 308807136}
-  - component: {fileID: 308807140}
   m_Layer: 5
   m_Name: GameState_UI
   m_TagString: Untagged
@@ -390,19 +375,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &308807140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 308807135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af2af994af83c9d4fb97d3d228a1fcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 844443783}
 --- !u!1 &418070643
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2af994af83c9d4fb97d3d228a1fcaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 844443783}
+  P1slider: {fileID: 844443783}
 --- !u!1 &898438701
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +826,7 @@ GameObject:
   - component: {fileID: 898438706}
   - component: {fileID: 898438705}
   - component: {fileID: 898438704}
-  - component: {fileID: 898438703}
+  - component: {fileID: 898438707}
   m_Layer: 5
   m_Name: 'Player_Two_score '
   m_TagString: Untagged
@@ -883,19 +855,6 @@ RectTransform:
   m_AnchoredPosition: {x: 151, y: 177}
   m_SizeDelta: {x: 52, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &898438703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898438701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af2af994af83c9d4fb97d3d228a1fcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
 --- !u!114 &898438704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,7 +905,19 @@ MonoBehaviour:
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &898438705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,6 +956,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898438701}
   m_CullTransparentMesh: 1
+--- !u!114 &898438707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898438701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f07e2d76c3aafc4da355d6546fddf41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P2slider: {fileID: 898438704}
 --- !u!1 &1035968035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,49 +2354,4 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2006858350
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2006858352}
-  - component: {fileID: 2006858351}
-  m_Layer: 0
-  m_Name: ScoreAdjuster
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2006858351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006858350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af2af994af83c9d4fb97d3d228a1fcaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 844443783}
---- !u!4 &2006858352
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006858350}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 196.70801, y: 78.09027, z: 52.829697}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
