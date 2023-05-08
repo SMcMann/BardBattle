@@ -966,7 +966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1878915783144775611, guid: 2020d63b2c284c245b4144ea408812df, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5175095401650079294, guid: 2020d63b2c284c245b4144ea408812df, type: 3}
       propertyPath: m_RootOrder
@@ -1205,7 +1205,7 @@ GameObject:
   - component: {fileID: 1366923982}
   m_Layer: 0
   m_Name: P1Tiefling
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1510,7 +1510,7 @@ GameObject:
   - component: {fileID: 1557884761}
   m_Layer: 0
   m_Name: P1Goblin
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1655,7 +1655,7 @@ GameObject:
   - component: {fileID: 1606300642}
   m_Layer: 0
   m_Name: P2Goblin
-  m_TagString: Player
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2080,7 +2080,7 @@ GameObject:
   - component: {fileID: 1791770088}
   m_Layer: 0
   m_Name: P2Tiefling
-  m_TagString: Player
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

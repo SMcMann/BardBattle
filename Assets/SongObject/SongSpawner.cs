@@ -7,7 +7,8 @@ using AK.Wwise;
 public class SongSpawner : MonoBehaviour
 {
     public static SongSpawner Instance;
-    private GameObject player;
+    private GameObject player1;
+    private GameObject player2;
     public GameObject Song;
     public TMPro.TextMeshProUGUI textBox;
     public float cooldownTime = 5f; // Time in seconds for the cooldown
@@ -45,23 +46,25 @@ public class SongSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.Find("Player");
+        player1 = GameObject.FindWithTag("Player1");
+        player2 = GameObject.FindWithTag("Player2");
 
-        bool playerCloseEnough = Vector2.Distance(new Vector2(player.transform.position.x, player.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
+        bool player1CloseEnough = Vector2.Distance(new Vector2(player1.transform.position.x, player1.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
+        bool player2CloseEnough = Vector2.Distance(new Vector2(player2.transform.position.x, player2.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
 
-        if (playerCloseEnough && !spawedPrompt)
+        if (player1CloseEnough && !spawedPrompt)
         {
             var offset = new Vector3(0f, 2f, 0);
             // Instantiate(songPromptInstance, transform.position + offset, transform.rotation);
             // spawedPrompt = true;
             // textBox.gameObject.SetActive(true);
         }
-        else if (!playerCloseEnough && spawedPrompt)
+        else if (!player1CloseEnough && spawedPrompt)
         {
             spawedPrompt = false;
         }
 
-        if (playerCloseEnough && Input.GetButtonDown("Jump"))
+        if (player1CloseEnough && Input.GetButtonDown("Jump"))
         {
             if (currentState == State.Ready)
             {
@@ -74,6 +77,35 @@ public class SongSpawner : MonoBehaviour
                 currentState = State.Cooldown;
             }
         }
+
+        if (player2CloseEnough && !spawedPrompt)
+        {
+            var offset = new Vector3(0f, 2f, 0);
+            // Instantiate(songPromptInstance, transform.position + offset, transform.rotation);
+            // spawedPrompt = true;
+            // textBox.gameObject.SetActive(true);
+        }
+        else if (!player2CloseEnough && spawedPrompt)
+        {
+            spawedPrompt = false;
+        }
+
+        if (player2CloseEnough && Input.GetButtonDown("Jump"))
+        {
+            if (currentState == State.Ready)
+            {
+                SpawnSong(1); // Temporary placeholder value for the melodyNumber 
+                currentState = State.Playing;
+            }
+            else if (currentState == State.Playing)
+            {
+                StopSongPrompt();
+                currentState = State.Cooldown;
+            }
+        }
+
+
+
 
         if (currentState == State.Cooldown)
         {
@@ -104,7 +136,7 @@ public class SongSpawner : MonoBehaviour
         // 1) get Song from server
         // 2) Spawn Song
         var offset = new Vector3(0f, 2f, 0);
-        // Instantiate(Song, transform.position + offset, transform.rotation);
+        Instantiate(Song, transform.position + offset, transform.rotation);
 
          // Set the Wwise Switch for the melody to play
         // MelodySwitch.SetValue(gameObject, melodyNumber);
@@ -113,7 +145,6 @@ public class SongSpawner : MonoBehaviour
         isChallengeActive = true;
         challengeTimer = 60f; // Set the challenge duration
         playerPoints = 0;
-        // buttonsContainer.SetActive(true);
 
         // Post the Wwise Event to play the challenge song
         AkSoundEngine.PostEvent("GameMusicControl", gameObject);
