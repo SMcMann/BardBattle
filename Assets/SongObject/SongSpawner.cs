@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using AK.Wwise;
+using UnityEngine.SceneManagement;
 
 public class SongSpawner : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class SongSpawner : MonoBehaviour
     private float challengeTimer;
     private int playerPoints;
     public GameObject buttonsContainer;
+    private TMPro.TextMeshProUGUI readyText;
+    private float debugTimer = 0f;
 
     private bool spawedPrompt = false;
     
@@ -29,6 +32,7 @@ public class SongSpawner : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -37,84 +41,144 @@ public class SongSpawner : MonoBehaviour
     }
 
 
+    //  call when a new scene is loaded
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        currentState = State.Cooldown;
+        AssignPlayerObjects();
+        GameObject readyTextObject = GameObject.FindGameObjectWithTag("ReadyText");
+        if (readyTextObject != null)
+        {
+            readyText = readyTextObject.GetComponent<TMPro.TextMeshProUGUI>();
+            Debug.Log("Found ready text");
+        }
+    }
+
+
+    //  Avoiding potential memory leaks, unsubscribe 
+    // from the SceneManager.sceneLoaded event when the object is destroyed
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        textBox.gameObject.SetActive(false);
+        if (textBox != null)
+        {
+            textBox.gameObject.SetActive(false);
+        }
+    }
+
+
+    private void AssignPlayerObjects()
+    {
+        if (player1 == null)
+        {
+            player1 = GameObject.FindWithTag("Player1");
+        }
+    
+        if (player2 == null)
+        {
+            player2 = GameObject.FindWithTag("Player2");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        player1 = GameObject.FindWithTag("Player1");
-        player2 = GameObject.FindWithTag("Player2");
+        AssignPlayerObjects();
 
-        bool player1CloseEnough = Vector2.Distance(new Vector2(player1.transform.position.x, player1.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
-        bool player2CloseEnough = Vector2.Distance(new Vector2(player2.transform.position.x, player2.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
-
-        if (player1CloseEnough && !spawedPrompt)
+        debugTimer += Time.deltaTime;
+        if (debugTimer >= 10f)
         {
-            var offset = new Vector3(0f, 2f, 0);
-            // Instantiate(songPromptInstance, transform.position + offset, transform.rotation);
-            // spawedPrompt = true;
-            // textBox.gameObject.SetActive(true);
-        }
-        else if (!player1CloseEnough && spawedPrompt)
-        {
-            spawedPrompt = false;
+            Debug.Log("currentState (Update): " + currentState);
+            debugTimer = 0f;
         }
 
-        if (player1CloseEnough && Input.GetButtonDown("Jump"))
+         if (player1 != null)
         {
-            if (currentState == State.Ready)
+            // Debug.Log("Player 1 is not null");
+            bool player1CloseEnough = Vector2.Distance(new Vector2(player1.transform.position.x, player1.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
+        
+            if (player1CloseEnough && !spawedPrompt)
             {
-                SpawnSong(1); // Temporary placeholder value for the melodyNumber 
-                currentState = State.Playing;
+                var offset = new Vector3(0f, 2f, 0);
+                // Instantiate(songPromptInstance, transform.position + offset, transform.rotation);
+                // spawedPrompt = true;
+                // textBox.gameObject.SetActive(true);
             }
-            else if (currentState == State.Playing)
+            else if (!player1CloseEnough && spawedPrompt)
             {
-                StopSongPrompt();
-                currentState = State.Cooldown;
+                spawedPrompt = false;
             }
-        }
 
-        if (player2CloseEnough && !spawedPrompt)
-        {
-            var offset = new Vector3(0f, 2f, 0);
-            // Instantiate(songPromptInstance, transform.position + offset, transform.rotation);
-            // spawedPrompt = true;
-            // textBox.gameObject.SetActive(true);
-        }
-        else if (!player2CloseEnough && spawedPrompt)
-        {
-            spawedPrompt = false;
-        }
-
-        if (player2CloseEnough && Input.GetButtonDown("Jump"))
-        {
-            if (currentState == State.Ready)
+            if (player1CloseEnough && Input.GetButtonDown("Jump"))
             {
-                SpawnSong(1); // Temporary placeholder value for the melodyNumber 
-                currentState = State.Playing;
-            }
-            else if (currentState == State.Playing)
-            {
-                StopSongPrompt();
-                currentState = State.Cooldown;
+                if (currentState == State.Ready)
+                {
+                    SpawnSong(1); // Temporary placeholder value for the melodyNumber 
+                    currentState = State.Playing;
+                }
+                else if (currentState == State.Playing)
+                {
+                    StopSongPrompt();
+                    currentState = State.Cooldown;
+                }
             }
         }
 
+        if (player2 != null)
+        {
+            // Debug.Log("Player 2 is not null");
+            bool player2CloseEnough = Vector2.Distance(new Vector2(player2.transform.position.x, player2.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
+            if (player2CloseEnough && !spawedPrompt)
+            {
+                var offset = new Vector3(0f, 2f, 0);
+                // Instantiate(songPromptInstance, transform.position + offset, transform.rotation);
+                // spawedPrompt = true;
+                // textBox.gameObject.SetActive(true);
+            }
+            else if (!player2CloseEnough && spawedPrompt)
+            {
+                spawedPrompt = false;
+            }
 
-
+            if (player2CloseEnough && Input.GetButtonDown("Jump"))
+            {
+                if (currentState == State.Ready)
+                {
+                    SpawnSong(1); // Temporary placeholder value for the melodyNumber 
+                    currentState = State.Playing;
+                }
+                else if (currentState == State.Playing)
+                {
+                    StopSongPrompt();
+                    currentState = State.Cooldown;
+                }
+            }
+        }
 
         if (currentState == State.Cooldown)
         {
             cooldownTimer += Time.deltaTime;
+            Debug.Log("Cooldown timer: " + cooldownTimer);
             if (cooldownTimer >= cooldownTime)
             {
+                Debug.Log("Cooldown timer is greater than cooldown time");
                 currentState = State.Ready;
                 cooldownTimer = 0f;
+                Debug.Log("currentState set to State.Ready");
             }
+        }
+        
+        if (readyText != null)
+        {
+            // Debug.Log("Ready text is not null");
+            readyText.gameObject.SetActive(currentState == State.Ready);
         }
 
         if (isChallengeActive)
@@ -148,6 +212,9 @@ public class SongSpawner : MonoBehaviour
 
         // Post the Wwise Event to play the challenge song
         AkSoundEngine.PostEvent("GameMusicControl", gameObject);
+
+        currentState = State.Playing;
+        Debug.Log("Song spawned. currentState: " + currentState);
     }
 
     void EndChallenge()
@@ -158,13 +225,15 @@ public class SongSpawner : MonoBehaviour
         // Stop the challenge song
         // Collect the points
         CollectPoints();
+        // Set currentState to Cooldown
+        currentState = State.Cooldown;
     }
 
-void CollectPoints()
-{
-    // Add the player's points from this challenge to their total score
-    // Use the 'playerPoints' variable to update the player's score or fame points
-}
+    void CollectPoints()
+    {
+        // Add the player's points from this challenge to their total score
+        // Use the 'playerPoints' variable to update the player's score or fame points
+    }
 
 
     void StopSongPrompt()
@@ -174,5 +243,8 @@ void CollectPoints()
 
        // Destroy(songPromptInstance);
        // songPromptInstance = null;
+
+       currentState = State.Cooldown;
+        Debug.Log("Song stopped. currentState: " + currentState);
     }
 }
