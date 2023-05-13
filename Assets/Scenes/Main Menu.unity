@@ -189,9 +189,6 @@ MonoBehaviour:
   OnVictoryEnter:
     m_PersistentCalls:
       m_Calls: []
-  player1Fame: 0
-  player2Fame: 0
-  victoryFame: 0
   challengeTimer: 0
   songSpawningTimer: 0
   songSpawner: {fileID: 0}
@@ -1181,7 +1178,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 02f8b20535bb2d142b713ac85184e39b, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: edc29b6cb232ac14e8bc59029cb2fa99, type: 2}
   decodeBank: 0
   loadAsynchronous: 0
   saveDecodedBank: 0
