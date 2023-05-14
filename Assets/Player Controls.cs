@@ -53,6 +53,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Test"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec39174f-57ef-4131-b2ed-e411570a155e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Grow"",
+                    ""type"": ""Button"",
+                    ""id"": ""989c2f30-593b-433d-833c-7eb07d964a0b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -132,6 +150,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e89708a0-13a7-45b8-b10d-de2a0a6daf26"",
+                    ""path"": ""<SwitchProControllerHID>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b30ea3d0-f4d1-44e8-9932-8e499df36eb7"",
+                    ""path"": ""<SwitchProControllerHID>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grow"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -149,6 +189,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Gameplay_interact = m_Gameplay.FindAction("interact", throwIfNotFound: true);
         m_Gameplay_ButtonSouth = m_Gameplay.FindAction("Button South", throwIfNotFound: true);
         m_Gameplay_move = m_Gameplay.FindAction("move", throwIfNotFound: true);
+        m_Gameplay_Test = m_Gameplay.FindAction("Test", throwIfNotFound: true);
+        m_Gameplay_Grow = m_Gameplay.FindAction("Grow", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -211,6 +253,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_interact;
     private readonly InputAction m_Gameplay_ButtonSouth;
     private readonly InputAction m_Gameplay_move;
+    private readonly InputAction m_Gameplay_Test;
+    private readonly InputAction m_Gameplay_Grow;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -218,6 +262,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @interact => m_Wrapper.m_Gameplay_interact;
         public InputAction @ButtonSouth => m_Wrapper.m_Gameplay_ButtonSouth;
         public InputAction @move => m_Wrapper.m_Gameplay_move;
+        public InputAction @Test => m_Wrapper.m_Gameplay_Test;
+        public InputAction @Grow => m_Wrapper.m_Gameplay_Grow;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -236,6 +282,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
+                @Test.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest;
+                @Test.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest;
+                @Test.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest;
+                @Grow.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnGrow;
+                @Grow.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnGrow;
+                @Grow.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnGrow;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -249,6 +301,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @move.started += instance.OnMove;
                 @move.performed += instance.OnMove;
                 @move.canceled += instance.OnMove;
+                @Test.started += instance.OnTest;
+                @Test.performed += instance.OnTest;
+                @Test.canceled += instance.OnTest;
+                @Grow.started += instance.OnGrow;
+                @Grow.performed += instance.OnGrow;
+                @Grow.canceled += instance.OnGrow;
             }
         }
     }
@@ -267,5 +325,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnButtonSouth(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+        void OnTest(InputAction.CallbackContext context);
+        void OnGrow(InputAction.CallbackContext context);
     }
 }
