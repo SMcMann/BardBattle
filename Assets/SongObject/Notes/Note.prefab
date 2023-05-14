@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 341790871674897326}
   - component: {fileID: 2003416687597257348}
   - component: {fileID: 1683308298179822732}
+  - component: {fileID: -2598682161998133675}
+  - component: {fileID: 5772312868095706103}
   m_Layer: 0
   m_Name: Note
   m_TagString: Untagged
@@ -26,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5732584612095214916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47.3368, y: -22.15546, z: 0.011875642}
+  m_LocalPosition: {x: -47.326, y: -22.196, z: 0.011875642}
   m_LocalScale: {x: 1.67, y: 1.67, z: 1.67}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -49,6 +51,8 @@ MonoBehaviour:
   deadZone: -20
   song: {fileID: 5114430811386421178, guid: a127b3de0b7697f4fa894953591ca613, type: 3}
   gameTick: {fileID: 1090508169928419402, guid: a1ba1bbeafdf694429b0d9fa483a4f22, type: 3}
+  expectedInput: 0
+  noteName: 
 --- !u!212 &1683308298179822732
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,3 +105,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &-2598682161998133675
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732584612095214916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999976, y: 0.898199, z: 0.19999996}
+  m_Center: {x: 0, y: 0.050899938, z: 0}
+--- !u!54 &5772312868095706103
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732584612095214916}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

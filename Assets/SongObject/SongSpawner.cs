@@ -150,7 +150,7 @@ public class SongSpawner : MonoBehaviour
         playerPoints = 0;
 
         // Post the Wwise Event to play the challenge song
-        AkSoundEngine.PostEvent("GameMusicControl", gameObject);
+        // AkSoundEngine.PostEvent("GameMusicControl", gameObject);
     }
 
     void EndChallenge()

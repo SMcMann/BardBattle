@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7919331191007419537}
   - component: {fileID: 6843489588810165317}
   - component: {fileID: -5831096978220481163}
+  - component: {fileID: -5971252091074207788}
+  - component: {fileID: 7073488782029407149}
   m_Layer: 0
   m_Name: SongObject
   m_TagString: Untagged
@@ -104,3 +106,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nooote: {fileID: 2003416687597257348, guid: 449bddbede5699a48aa1acf666588d6a, type: 3}
   gameTick: {fileID: 1090508169928419402, guid: a1ba1bbeafdf694429b0d9fa483a4f22, type: 3}
+--- !u!61 &-5971252091074207788
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114430811386421178}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.006941974}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.6, y: 3.15}
+    newSize: {x: 12.21, y: 5.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.6, y: 0.7480806}
+  m_EdgeRadius: 0
+--- !u!50 &7073488782029407149
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5114430811386421178}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

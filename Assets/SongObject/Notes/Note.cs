@@ -28,7 +28,21 @@ public class Note : MonoBehaviour
             SongLogic sn = song.GetComponent<SongLogic>();
             sn.testFunction(expectedInput);
 
-            Debug.Log(noteName);
+            // Debug.Log(noteName);
         }
+    }
+
+    void OnCollisionEnter(Collision  collision) {
+      Debug.Log("collision: " + collision.gameObject.tag);
+      if(collision.gameObject.tag == "SongBar") {
+        Destroy(gameObject);
+      }
+    }
+
+      void OnTriggerEnter2D(Collider2D  collision) {
+      Debug.Log("triiger: " + collision.gameObject.tag);
+      if(collision.gameObject.tag == "SongBar") {
+        Destroy(gameObject);
+      }
     }
 }

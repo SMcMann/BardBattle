@@ -23,14 +23,13 @@ public class SongLogic : MonoBehaviour
         var offset = new Vector3(0f, 2f, 0);
         for (int i=0; i < 3; i++)
         {
-            Debug.Log(test[i]);
+            // Debug.Log(test[i]);
             // test[i].noteName = "";
             var n = Instantiate(nooote, transform.position + offset, transform.rotation);
             n.noteName = "aaaa";
 
             offset += new Vector3(0, 2, 0);
         }
-        Debug.Log(ticker.getTick());
     }
 
     // Update is called once per frame
@@ -42,5 +41,9 @@ public class SongLogic : MonoBehaviour
     public void testFunction(int x)
     {
         Debug.Log(x);
+    }
+
+    void OnCollisionEnter(Collision  collision) {
+      Debug.Log("collision 0: " + collision.gameObject.tag);
     }
 }
