@@ -18,6 +18,7 @@ public class SongLogic : MonoBehaviour
     void Start()
     {
         Debug.Log("SPAWNINGGGG");
+        StartCoroutine(SelfDestruct());
         TickSystem ticker = gameTick.GetComponent<TickSystem>();
         test = new Note[] { nooote, nooote, nooote, };
         var offset = new Vector3(0f, 2f, 0);
@@ -45,5 +46,11 @@ public class SongLogic : MonoBehaviour
 
     void OnCollisionEnter(Collision  collision) {
       Debug.Log("collision 0: " + collision.gameObject.tag);
+    }
+
+     IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
     }
 }

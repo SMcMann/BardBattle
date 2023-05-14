@@ -173,7 +173,7 @@ void CollectPoints()
     void StopSongPrompt()
     {
         // Post the Wwise Event to stop the challenge song
-        AkSoundEngine.PostEvent("GameMusicControl", gameObject);
+        // AkSoundEngine.PostEvent("GameMusicControl", gameObject);
 
        // Destroy(songPromptInstance);
        // songPromptInstance = null;
