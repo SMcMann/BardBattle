@@ -10,6 +10,8 @@ public class SongSpawner : MonoBehaviour
     private GameObject player1;
     private GameObject player2;
     public GameObject Song;
+    public GameObject MusicManager;
+
     public TMPro.TextMeshProUGUI textBox;
     public float cooldownTime = 5f; // Time in seconds for the cooldown
     private float cooldownTimer = 0f;
@@ -71,8 +73,10 @@ public class SongSpawner : MonoBehaviour
         {
             if (currentState == State.Ready)
             {
-                SpawnSong(1); // Temporary placeholder value for the melodyNumber 
-                currentState = State.Playing;
+                //SpawnSong(1); // Temporary placeholder value for the melodyNumber 
+              MusicManagementScript mm = MusicManager.GetComponent<MusicManagementScript>();
+              mm.playerOneMelody(1);
+              currentState = State.Playing;
             }
             else if (currentState == State.Playing)
             {
