@@ -2249,6 +2249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SongSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 936092974423396882, guid: eb0c3102f4f8564478bfd38146513212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 936092974423396892, guid: eb0c3102f4f8564478bfd38146513212, type: 3}
       propertyPath: m_RootOrder
       value: 5
