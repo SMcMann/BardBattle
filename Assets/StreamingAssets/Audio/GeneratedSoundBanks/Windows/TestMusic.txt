@@ -8,7 +8,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	679995388	Play_P1Melody03			\TestMusic\P1Melodies\Play_P1Melody03	
 	679995389	Play_P1Melody02			\TestMusic\P1Melodies\Play_P1Melody02	
 	679995390	Play_P1Melody01			\TestMusic\P1Melodies\Play_P1Melody01	
-	3757011675	Play_TestBadSounds			\TestMusic\Play_TestBadSounds	
+	857585953	Play_P1BadSound			\TestMusic\Play_P1BadSound	
 	4205436004	Play_P2Melody08			\TestMusic\P2Melodies\Play_P2Melody08	
 	4205436008	Play_P2Melody04			\TestMusic\P2Melodies\Play_P2Melody04	
 	4205436009	Play_P2Melody05			\TestMusic\P2Melodies\Play_P2Melody05	
@@ -54,6 +54,8 @@ Switch	ID	Name	Switch Group			Notes
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	2960229541	TestPlayer1SC			\TestMusic\TestPlayer1SC	
+	2999433459	TestPlayer2Inactive			\TestMusic\TestPlayer2Inactive	
+	3228127058	TestPlayer2SC			\TestMusic\TestPlayer2SC	
 	3338826524	TestPlayer1Inactive			\TestMusic\TestPlayer1Inactive	
 
 Effect plug-ins	ID	Name	Type				Notes
@@ -87,6 +89,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	674852606	MIDI_TavernMelody_Lute_C1_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C1_1_D6175082.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_1\MIDI_TavernMelody_Lute_C1_1		139
 	704349887	MIDI_TavernMelody_Lute_D1_3	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D1_3_C04DA9EE.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_3\MIDI_TavernMelody_Lute_D1_3		177
 	717781455	MX_TavernMelody_Sax_4	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Sax_4_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_4\MX_TavernMelody_Sax_4		2270864
+	720542276	Silence 130 (SFX)	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\Silence 130 (SFX)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Silence 130 (SFX)		1418864
 	729962468	MX_TavernMelody_Lute_3_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Lute_3_1_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Lute\MX_TavernMelody_Lute_3_1\MX_TavernMelody_Lute_3_1		1954064
 	737008557	MX_TavernMelody_Sax_8	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Sax_8_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_8\MX_TavernMelody_Sax_8		2127788
 	788804399	MIDI_TavernMelody_Lute_C#1_5	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#1_5_D5A61E63.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_5\MIDI_TavernMelody_Lute_C#1_5		189
