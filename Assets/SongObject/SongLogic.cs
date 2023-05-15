@@ -19,8 +19,7 @@ public class SongLogic : MonoBehaviour
     {
         Debug.Log("SPAWNINGGGG");
         StartCoroutine(SelfDestruct());
-        TickSystem ticker = gameTick.GetComponent<TickSystem>();
-        test = new Note[] { nooote, nooote, nooote, };
+        
         var offset = new Vector3(0f, 2f, 0);
         for (int i=0; i < 3; i++)
         {

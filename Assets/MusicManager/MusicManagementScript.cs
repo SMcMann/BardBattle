@@ -6,9 +6,12 @@ public class MusicManagementScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public AK.Wwise.Event MusicEvent;
+    public Note nooote;
+    int count = 1;
     void Start()
     {
-        MusicEvent.Post(gameObject, (uint)AkCallbackType.AK_MusicSyncAll, CallbackFunction);
+        uint CallbackType = (uint)(AkCallbackType.AK_MIDIEvent | AkCallbackType.AK_MusicSyncUserCue);
+        MusicEvent.Post(gameObject, CallbackType, CallbackFunction);
         AkSoundEngine.SetSwitch("Player1Instrument", "P1_Lute", gameObject);
         AkSoundEngine.SetRTPCValue("TestPlayer1Inactive", 100, gameObject);
     }
@@ -21,17 +24,39 @@ public class MusicManagementScript : MonoBehaviour
     void CallbackFunction(object COOKIE, AkCallbackType TYPE, object INFO)
     {
     if (TYPE == AkCallbackType.AK_MIDIEvent) {
-      Debug.Log("TYPE");
+      AkMIDIEventCallbackInfo eventinfo = (AkMIDIEventCallbackInfo) INFO;
+
+      // spawwn a note
+      if (eventinfo.byOnOffNote.Equals(36) && (count %2 == 1) ) {
+        var offset = new Vector3(0f, 2f, 0);
+        Instantiate(nooote, transform.position + offset, transform.rotation);
+      }
+
+      // allow input for a note
+      if (eventinfo.byOnOffNote.Equals(37) && (count %2 == 1) ) {
+        Debug.Log("Toggling not ready status!");  
+      }
+
+      count++;
+      Debug.Log(count);
+      Debug.Log("==============");
+
     }
-    // if (TYPE == AkCallbackType.Ak_MIDIEvent)
-    // {    AkMIDIEventCallbackInfo eventinfo = (AkMIDIEventCallbackInfo) INFO;
-    //             if (eventinfo.byType. == 24)
-    //                 // SpawnNote();
-    //                 Debug.Log("Spanw song now plz");
-    //             if (eventinfo.tNoteOnOff.byNote == 25)
-    //                 // SpawnNote();
-    //                 Debug.Log("Accpet input");
-    // }
+    else if (TYPE == AkCallbackType.AK_MIDIEvent) {
+      // give player back control cause song is done
+      count = 1;
+    }
+    else {
+      Debug.Log("=``````````=");
+      Debug.Log(TYPE);
+    }
+
+    // if (TYPE == AkCallbackType.Ak_MusicSyncUserCue)
+    //   {    
+    //     AkUserCueEventCallbackInfo otherinfo = (AkUserCueEventCallbackInfo) OTHERINFO;
+    //       if (otherinfo.pszUserCueName == "Cool")
+    //         OpenInput();
+    //   }
     }
 
     public void playerOneMelody(int songNum)

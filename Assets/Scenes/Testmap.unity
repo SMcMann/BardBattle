@@ -1657,6 +1657,10 @@ MonoBehaviour:
   sidewaysForce: 500
   speed: {x: 7, y: 7}
   animator: {fileID: 1606300637}
+  MoveUp: 0
+  MoveDown: 0
+  MoveRight: 0
+  MoveLeft: 0
 --- !u!1 &1726220305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,6 +1978,10 @@ MonoBehaviour:
   sidewaysForce: 500
   speed: {x: 7, y: 7}
   animator: {fileID: 1791770089}
+  MoveUp: 0
+  MoveDown: 0
+  MoveRight: 0
+  MoveLeft: 0
 --- !u!95 &1791770089
 Animator:
   serializedVersion: 5
@@ -2283,6 +2291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6735626651637810308, guid: 0a0dda1829dc9ce4cbc581fb3da4d63e, type: 3}
+      propertyPath: nooote
+      value: 
+      objectReference: {fileID: 2003416687597257348, guid: 449bddbede5699a48aa1acf666588d6a, type: 3}
     - target: {fileID: 6735626651637810309, guid: 0a0dda1829dc9ce4cbc581fb3da4d63e, type: 3}
       propertyPath: m_RootOrder
       value: 12
