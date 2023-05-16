@@ -21,7 +21,7 @@ public class SongSpawner : MonoBehaviour
     private bool isChallengeActive;
     private float challengeTimer;
     private int playerPoints;
-    public GameObject buttonsContainer;
+    public GameObject thisTable;
 
     private bool spawedPrompt = false;
     
@@ -73,9 +73,9 @@ public class SongSpawner : MonoBehaviour
         {
             if (currentState == State.Ready)
             {
-                //SpawnSong(1); // Temporary placeholder value for the melodyNumber 
+              SpawnSong(1); // Temporary placeholder value for the melodyNumber 
               MusicManagementScript mm = MusicManager.GetComponent<MusicManagementScript>();
-              mm.playerOneMelody(1);
+              mm.playerOneMelody(1, this.transform.position);
               currentState = State.Playing;
             }
             else if (currentState == State.Playing)
@@ -142,7 +142,7 @@ public class SongSpawner : MonoBehaviour
     {
         // 1) get Song from server
         // 2) Spawn Song
-        var offset = new Vector3(0f, 2f, 0);
+        var offset = new Vector3(0f, 2.5f, 0);
         Instantiate(Song, transform.position + offset, transform.rotation);
 
          // Set the Wwise Switch for the melody to play
@@ -167,11 +167,11 @@ public class SongSpawner : MonoBehaviour
         CollectPoints();
     }
 
-void CollectPoints()
-{
-    // Add the player's points from this challenge to their total score
-    // Use the 'playerPoints' variable to update the player's score or fame points
-}
+    void CollectPoints()
+    {
+        // Add the player's points from this challenge to their total score
+        // Use the 'playerPoints' variable to update the player's score or fame points
+    }
 
 
     void StopSongPrompt()

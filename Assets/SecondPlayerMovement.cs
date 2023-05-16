@@ -28,9 +28,6 @@ public class SecondPlayerMovement : MonoBehaviour
     void Awake()
     {
         controls = new PlayerControls();
-        Debug.Log("22222222222222222");
-        controls.Gameplay.Grow.performed += ctx => Grow();
-        controls.Gameplay.Test.performed += ctx => Test();
         controls.Gameplay.MoveUp.started += ctx => MoveUp = true;
         controls.Gameplay.MoveUp.canceled += ctx => MoveUp = false;
         controls.Gameplay.MoveDown.started += ctx => MoveDown = true;
@@ -46,15 +43,7 @@ public class SecondPlayerMovement : MonoBehaviour
         controls.Gameplay.Enable();
     }
 
-    void Grow()
-    {
-        Debug.Log("Pressed A");
-        transform.localScale *= 1.1f;
-    }
-    void Test()
-    {
-        Debug.Log("Pressed B");
-    }
+
     void Start()
     {
         // Get the background object and its bounds

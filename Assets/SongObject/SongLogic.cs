@@ -18,18 +18,7 @@ public class SongLogic : MonoBehaviour
     void Start()
     {
         Debug.Log("SPAWNINGGGG");
-        StartCoroutine(SelfDestruct());
-        
-        var offset = new Vector3(0f, 2f, 0);
-        for (int i=0; i < 3; i++)
-        {
-            // Debug.Log(test[i]);
-            // test[i].noteName = "";
-            var n = Instantiate(nooote, transform.position + offset, transform.rotation);
-            n.noteName = "aaaa";
-
-            offset += new Vector3(0, 2, 0);
-        }
+        StartCoroutine(SelfDestruct());        
     }
 
     // Update is called once per frame
@@ -49,7 +38,7 @@ public class SongLogic : MonoBehaviour
 
      IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(13f);
         Destroy(gameObject);
     }
 }

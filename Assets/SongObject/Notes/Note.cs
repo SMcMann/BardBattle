@@ -5,42 +5,60 @@ using UnityEngine.InputSystem;
 
 public class Note : MonoBehaviour
 {
-    public int noteLength = 4;
-    public float deadZone = -20;
     public GameObject song;
-    public GameObject gameTick;
 
     public int expectedInput;
     public string noteName;
     PlayerControls controls;
+    public bool ready = false;
 
     // Start is called before the first frame update
     void Awake()
     {
+
         controls = new PlayerControls();
-        controls.Gameplay.ButtonSouth.performed += ctx => Input();
-        controls.Gameplay.interact.performed += ctx => Input();
+        controls.Gameplay.ButtonNorth.performed += ctx => Input(ctx);
+        controls.Gameplay.ButtonEast.performed += ctx => Input(ctx);
+        controls.Gameplay.ButtonSouth.performed += ctx => Input(ctx);
+        controls.Gameplay.ButtonWest.performed += ctx => Input(ctx);
+        controls.Gameplay.LeftTrigger.performed += ctx => Input(ctx);
+        controls.Gameplay.RightTrigger.performed += ctx => Input(ctx);
+        StartCoroutine(SelfDestruct());
+        StartCoroutine(ReadyUp());
     }
 
-    void Input() 
+    void OnEnable()
     {
-        Debug.Log("I m ded");
-        Destroy(gameObject);
+        controls.Gameplay.Enable();
+    }
+
+    void Input(InputAction.CallbackContext context)
+    {
+        Debug.Log(context.action.id.ToString());
+        Debug.Log(context.action.name.ToString());
+        if (ready && context.action.name.ToString() == noteName ) {
+          Destroy(gameObject);
+          //     SongLogic sn = song.GetComponent<SongLogic>();
+          //     sn.testFunction(expectedInput);          
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + (Vector3.down * 3) * Time.deltaTime;
-        // if (transform.position.y < deadZone)
-        // {
-        //     Destroy(gameObject);
-        //     SongLogic sn = song.GetComponent<SongLogic>();
-        //     sn.testFunction(expectedInput);
-
-        //     // Debug.Log(noteName);
-        // }
+        transform.position = transform.position + (Vector3.down * 5) * Time.deltaTime;
     }
+    IEnumerator ReadyUp()
+      {
+          yield return new WaitForSeconds(1.7f);
+          ready = true;
+      }
+    IEnumerator SelfDestruct()
+      {
+          yield return new WaitForSeconds(3f);
+          Destroy(gameObject);
+      }
 
     void OnCollisionEnter(Collision  collision) {
       Debug.Log("collision: " + collision.gameObject.tag);
@@ -54,5 +72,6 @@ public class Note : MonoBehaviour
       if(collision.gameObject.tag == "SongBar") {
         Destroy(gameObject);
       }
+
     }
 }

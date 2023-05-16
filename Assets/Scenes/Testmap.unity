@@ -963,11 +963,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1863346941313056048, guid: 2020d63b2c284c245b4144ea408812df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -49.03
+      value: -52.05
       objectReference: {fileID: 0}
     - target: {fileID: 1863346941313056048, guid: 2020d63b2c284c245b4144ea408812df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.74
+      value: -23.43
       objectReference: {fileID: 0}
     - target: {fileID: 1863346941313056048, guid: 2020d63b2c284c245b4144ea408812df, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1142,7 +1142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366923977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -65.98, y: -19.3, z: 0}
+  m_LocalPosition: {x: -65.56, y: -20.8, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1505,7 +1505,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557884760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66, y: -20, z: 1}
+  m_LocalPosition: {x: -54.45, y: -23.48, z: 1}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2291,6 +2291,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6735626651637810308, guid: 0a0dda1829dc9ce4cbc581fb3da4d63e, type: 3}
+      propertyPath: aNote
+      value: 
+      objectReference: {fileID: 2003416687597257348, guid: 5d8b912483a72e34599368155c0e3b4c, type: 3}
+    - target: {fileID: 6735626651637810308, guid: 0a0dda1829dc9ce4cbc581fb3da4d63e, type: 3}
+      propertyPath: bNote
+      value: 
+      objectReference: {fileID: 2003416687597257348, guid: cd5680dbdb32320428b8237c1f18e140, type: 3}
+    - target: {fileID: 6735626651637810308, guid: 0a0dda1829dc9ce4cbc581fb3da4d63e, type: 3}
+      propertyPath: lNote
+      value: 
+      objectReference: {fileID: 2003416687597257348, guid: 31a880b882fa01d4a993eeefe00ca071, type: 3}
+    - target: {fileID: 6735626651637810308, guid: 0a0dda1829dc9ce4cbc581fb3da4d63e, type: 3}
+      propertyPath: rNote
+      value: 
+      objectReference: {fileID: 2003416687597257348, guid: 13dae868d3203ef4e99847dee64cf1ae, type: 3}
+    - target: {fileID: 6735626651637810308, guid: 0a0dda1829dc9ce4cbc581fb3da4d63e, type: 3}
+      propertyPath: yNote
+      value: 
+      objectReference: {fileID: 2003416687597257348, guid: 449bddbede5699a48aa1acf666588d6a, type: 3}
     - target: {fileID: 6735626651637810308, guid: 0a0dda1829dc9ce4cbc581fb3da4d63e, type: 3}
       propertyPath: nooote
       value: 

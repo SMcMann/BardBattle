@@ -6,13 +6,19 @@ public class MusicManagementScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public AK.Wwise.Event MusicEvent;
-    public Note nooote;
+    public Note aNote;
+    public Note bNote;
+    public Note yNote;
+    public Note lNote;
+    public Note rNote;
     int count = 1;
+    UnityEngine.Vector3 spawnpoint;
     void Start()
     {
         uint CallbackType = (uint)(AkCallbackType.AK_MIDIEvent | AkCallbackType.AK_MusicSyncUserCue);
         MusicEvent.Post(gameObject, CallbackType, CallbackFunction);
         AkSoundEngine.SetSwitch("Player1Instrument", "P1_Lute", gameObject);
+        AkSoundEngine.SetSwitch("Player2Instrument", "P2_Sax", gameObject);
         AkSoundEngine.SetRTPCValue("TestPlayer1Inactive", 100, gameObject);
     }
     // Update is called once per frame
@@ -28,8 +34,28 @@ public class MusicManagementScript : MonoBehaviour
 
       // spawwn a note
       if (eventinfo.byOnOffNote.Equals(36) && (count %2 == 1) ) {
-        var offset = new Vector3(0f, 2f, 0);
-        Instantiate(nooote, transform.position + offset, transform.rotation);
+        var offset = new Vector3(0f, 3f, 0);
+
+        int num = Random.Range(1, 5);
+        switch(num) {
+          case 1:
+            Instantiate(aNote, new Vector3(spawnpoint.x - 2f, spawnpoint.y + 12f, 3), transform.rotation);
+            break;
+          case 2:
+            Instantiate(bNote, new Vector3(spawnpoint.x -1f, spawnpoint.y + 12f, 3), transform.rotation);
+            break;
+          case 3:
+            Instantiate(lNote, new Vector3(spawnpoint.x, spawnpoint.y + 12f, 3), transform.rotation);
+            break;
+          case 4:
+            Instantiate(rNote, new Vector3(spawnpoint.x +1f, spawnpoint.y + 12f, 3), transform.rotation);
+            break;
+          default:
+            Instantiate(yNote, new Vector3(spawnpoint.x +2f, spawnpoint.y + 12f, 3), transform.rotation);
+            break;
+        }
+
+        // obj.transform.localPosition = spawnpoint;
       }
 
       // allow input for a note
@@ -59,9 +85,20 @@ public class MusicManagementScript : MonoBehaviour
     //   }
     }
 
-    public void playerOneMelody(int songNum)
+    public void playerOneMelody(int songNum, UnityEngine.Vector3 table)
     {
       Debug.Log("Player 1 is playing a thing");
-      AkSoundEngine.SetSwitch("Player1Melodies", "P1_Melody01", gameObject);
+      Debug.Log(table);
+      spawnpoint = table;
+
+      int num = Random.Range(0, p1map.Length);
+      AkSoundEngine.SetSwitch("Player1Melodies", p1map[num], gameObject);
     }
+
+    string[] p1map = new string[] {
+      "P1_Melody01", 
+      "P1_Melody02", 
+      "P1_Melody03"
+      };
 }
+
