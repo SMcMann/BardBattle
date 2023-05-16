@@ -23,11 +23,13 @@ public class MusicManagementScript : MonoBehaviour
 
     void CallbackFunction(object COOKIE, AkCallbackType TYPE, object INFO)
     {
+    Debug.Log(TYPE);
     if (TYPE == AkCallbackType.AK_MIDIEvent) {
       AkMIDIEventCallbackInfo eventinfo = (AkMIDIEventCallbackInfo) INFO;
 
       // spawwn a note
       if (eventinfo.byOnOffNote.Equals(36) && (count %2 == 1) ) {
+        Debug.Log("plz spawn a note"); 
         var offset = new Vector3(0f, 2f, 0);
         Instantiate(nooote, transform.position + offset, transform.rotation);
       }

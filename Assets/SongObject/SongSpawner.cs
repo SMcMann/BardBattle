@@ -8,16 +8,12 @@ using UnityEngine.SceneManagement;
 public class SongSpawner : MonoBehaviour
 {
     public static SongSpawner Instance;
-    public GameObject Song;
     public GameObject MusicManager;
 
     public TMPro.TextMeshProUGUI textBox;
-    public GameObject songPromptInstance;
-    public GameObject buttonsContainer;
     private TMPro.TextMeshProUGUI readyText;
     private float debugTimer = 0f;
 
-    private bool spawedPrompt = false;
 
     private void Awake()
     {
@@ -69,16 +65,14 @@ public class SongSpawner : MonoBehaviour
     {
         // 1) get Song from server
         // 2) Spawn Song
-        var offset = new Vector3(0f, 2f, 0);
-        Instantiate(Song, table.transform.position + offset, table.transform.rotation);
-
+        MusicManagementScript mm = MusicManager.GetComponent<MusicManagementScript>();
+        mm.playerOneMelody(1);
         // Start the challenge
         table.IsChallengeActive = true;
         table.ChallengeTimer = 60f; // Set the challenge duration
         table.PlayerPoints = 0;
 
         // Post the Wwise Event to play the challenge song
-        AkSoundEngine.PostEvent("GameMusicControl", gameObject);
         Debug.Log("Song spawned. currentState: " + table.CurrentState);
     }
 

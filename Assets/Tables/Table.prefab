@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 536476231318512698}
   - component: {fileID: 1878915783144775612}
   - component: {fileID: 1560832218395621333}
+  - component: {fileID: -8561248942659336755}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -121,10 +122,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4ad9a743f778c4886ee6edf2ddadc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Song: {fileID: 0}
   cooldownTime: 5
   uiText: {fileID: 4329168421550159834}
   tableImage: {fileID: 0}
+--- !u!114 &-8561248942659336755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878915783144775615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f95ace5cdcf0c24ebaee18205cd251e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Song: {fileID: 0}
+  MusicManager: {fileID: 6735626651637810307, guid: 0a0dda1829dc9ce4cbc581fb3da4d63e, type: 3}
+  textBox: {fileID: 0}
+  songPromptInstance: {fileID: 3463219658445780855, guid: 5b67a63508b99cd4b8bf4f0f70f8b8a8, type: 3}
+  buttonsContainer: {fileID: 0}
 --- !u!1 &2442194500356347388
 GameObject:
   m_ObjectHideFlags: 0

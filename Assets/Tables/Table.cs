@@ -6,7 +6,6 @@ using TMPro;
 
 public class Table : MonoBehaviour
 {
-    public GameObject Song;
     public float cooldownTime = 5f;
     private float cooldownTimer = 0f;
     public enum State { Ready, Playing, Cooldown }
@@ -45,9 +44,6 @@ public class Table : MonoBehaviour
 
     private void Awake()
     {
-        // songSpawner = SongSpawner.Instance;
-        // Debug.Log("SongSpawner instance: " + (songSpawner != null ? "Not null" : "Null"));
-
         currentState = State.Cooldown;
         uiText = GetComponentInChildren<TextMeshProUGUI>();
         tableImage = GetComponentInChildren<Image>();
@@ -59,25 +55,16 @@ public class Table : MonoBehaviour
         player2 = GameObject.FindWithTag("Player2");
         debugTimer += Time.deltaTime;
 
-        // if (debugTimer >= 5f)
-        // {
-        //     Debug.Log("currentState (Update): " + currentState);
-        //     debugTimer = 0f;
-        // }
-
         if (currentState == State.Cooldown)
         {
             cooldownTimer += Time.deltaTime;
             if (cooldownTimer >= cooldownTime)
             {
-                Debug.Log("Cooldown finished");
+                // Debug.Log("Cooldown finished");
                 currentState = State.Ready;
                 cooldownTimer = 0f;
             }
-            else
-            {
-                Debug.Log("Cooldown in progress: " + cooldownTimer);
-            }
+
         }
 
         if (currentState == State.Ready)
@@ -101,23 +88,15 @@ public class Table : MonoBehaviour
         bool player1CloseEnough = Vector2.Distance(new Vector2(player1.transform.position.x, player1.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
         bool player2CloseEnough = Vector2.Distance(new Vector2(player2.transform.position.x, player2.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
 
-        // Debug.Log("Player1 Distance: " + Vector2.Distance(new Vector2(player1.transform.position.x, player1.transform.position.y), new Vector2(transform.position.x, transform.position.y)));
-        // Debug.Log("Player2 Distance: " + Vector2.Distance(new Vector2(player2.transform.position.x, player2.transform.position.y), new Vector2(transform.position.x, transform.position.y)));
-        // Debug.Log("Jump Button Pressed: " + Input.GetButtonDown("Jump"));
-        
-        // Debug.Log("Player1 Position: " + player1.transform.position);
-        // Debug.Log("Player2 Position: " + player2.transform.position);
-        // Debug.Log("Table Position: " + transform.position);
-
         if (player1CloseEnough && Input.GetButtonDown("Jump"))
         {
-            Debug.Log("player1 is close enough and the Jump button was pressed.");
+            // Debug.Log("player1 is close enough and the Jump button was pressed.");
             HandleChallengeStart();
         }
 
         if (player2CloseEnough && Input.GetButtonDown("Jump"))
         {
-            Debug.Log("player2 is close enough and the Jump button was pressed.");
+            // Debug.Log("player2 is close enough and the Jump button was pressed.");
             HandleChallengeStart();
         }
 
