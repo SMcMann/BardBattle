@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5772312868095706103}
   - component: {fileID: 253161366416659818}
   m_Layer: 0
-  m_Name: Note
+  m_Name: B Note
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5732584612095214916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47.326, y: -22.196, z: 0.011875642}
+  m_LocalPosition: {x: -47.326, y: -22.196, z: 5}
   m_LocalScale: {x: 1.67, y: 1.67, z: 1.67}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -48,12 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99bf1fee0d3b87543972d7469248bfae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteLength: 4
-  deadZone: -20
   song: {fileID: 5114430811386421178, guid: a127b3de0b7697f4fa894953591ca613, type: 3}
-  gameTick: {fileID: 1090508169928419402, guid: a1ba1bbeafdf694429b0d9fa483a4f22, type: 3}
   expectedInput: 0
-  noteName: 
+  noteName: Button East
+  ready: 0
 --- !u!212 &1683308298179822732
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,7 +93,7 @@ SpriteRenderer:
   m_SortingLayerID: -957856889
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 554eefad111388c4c8a518030f68b44b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c331f5b4b4bd8b34e9e64bc2164aba50, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +113,7 @@ BoxCollider:
   m_GameObject: {fileID: 5732584612095214916}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.99999976, y: 0.898199, z: 0.19999996}
   m_Center: {x: 0, y: 0.050899938, z: 0}
@@ -127,9 +125,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5732584612095214916}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -142,7 +140,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5732584612095214916}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
