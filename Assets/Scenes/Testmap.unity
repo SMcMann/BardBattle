@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 52665238}
   - component: {fileID: 52665237}
   - component: {fileID: 52665239}
+  - component: {fileID: 52665240}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -277,6 +278,18 @@ MonoBehaviour:
   p2goblins_thumbnail: {fileID: 307007321}
   p2tieflings: {fileID: 1791770087}
   p2tieflings_thumbnail: {fileID: 1784758342}
+--- !u!114 &52665240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52665232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab063c2fa40f4d4b93d29433b745db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &307007321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2019,7 @@ GameObject:
   - component: {fileID: 1826031170}
   - component: {fileID: 1826031168}
   - component: {fileID: 1826031171}
+  - component: {fileID: 1826031172}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
