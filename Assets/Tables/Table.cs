@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Table : MonoBehaviour
@@ -18,7 +19,10 @@ public class Table : MonoBehaviour
     private float debugTimer = 0f;
     private SongSpawner songSpawner;
     public TMPro.TextMeshProUGUI uiText;
-    public UnityEngine.UI.Image uiImage;
+    // public UnityEngine.UI.Image uiImage;
+    public Image tableImage;
+
+
 
     public State CurrentState { get { return currentState; } set { currentState = value; } }
     public bool IsChallengeActive { get { return isChallengeActive; } set { isChallengeActive = value; } }
@@ -46,6 +50,7 @@ public class Table : MonoBehaviour
 
         currentState = State.Cooldown;
         uiText = GetComponentInChildren<TextMeshProUGUI>();
+        tableImage = GetComponentInChildren<Image>();
     }
 
     void Update()
@@ -53,33 +58,44 @@ public class Table : MonoBehaviour
         player1 = GameObject.FindWithTag("Player1");
         player2 = GameObject.FindWithTag("Player2");
         debugTimer += Time.deltaTime;
-        if (debugTimer >= 5f)
-        {
-            Debug.Log("currentState (Update): " + currentState);
-            debugTimer = 0f;
-        }
+
+        // if (debugTimer >= 5f)
+        // {
+        //     Debug.Log("currentState (Update): " + currentState);
+        //     debugTimer = 0f;
+        // }
 
         if (currentState == State.Cooldown)
         {
             cooldownTimer += Time.deltaTime;
             if (cooldownTimer >= cooldownTime)
             {
+                Debug.Log("Cooldown finished");
                 currentState = State.Ready;
                 cooldownTimer = 0f;
+            }
+            else
+            {
+                Debug.Log("Cooldown in progress: " + cooldownTimer);
             }
         }
 
         if (currentState == State.Ready)
         {
-            uiText.text = "Press 'X' to start challenge";
+            // uiText.text = "Press 'X' to start challenge";
+             tableImage.enabled = true;
+             uiText.text = "";
         }
         else if (currentState == State.Playing)
         {
             uiText.text = "Challenge in progress...";
+            tableImage.enabled = false;
         }
         else if (currentState == State.Cooldown)
         {
+            // uiText.text = $"Cooldown: {Mathf.Ceil(cooldownTime - cooldownTimer)}";
             uiText.text = $"Cooldown: {Mathf.Ceil(cooldownTime - cooldownTimer)}";
+            tableImage.enabled = false;
         }
 
         bool player1CloseEnough = Vector2.Distance(new Vector2(player1.transform.position.x, player1.transform.position.y), new Vector2(transform.position.x, transform.position.y)) <= 2;
@@ -127,6 +143,10 @@ public class Table : MonoBehaviour
         {
             songSpawner.StopSong(this);
             currentState = State.Cooldown;
+        }
+        else if (currentState == State.Cooldown)
+        {
+            currentState = State.Ready;
         }
     }
 
