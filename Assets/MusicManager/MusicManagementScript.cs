@@ -20,6 +20,7 @@ public class MusicManagementScript : MonoBehaviour
         AkSoundEngine.SetSwitch("Player1Instrument", "P1_Lute", gameObject);
         AkSoundEngine.SetSwitch("Player2Instrument", "P2_Sax", gameObject);
         AkSoundEngine.SetRTPCValue("TestPlayer1Inactive", 100, gameObject);
+        AkSoundEngine.SetRTPCValue("TestPlayer2Inactive", 100, gameObject);
     }
     // Update is called once per frame
     void Update()
@@ -85,20 +86,44 @@ public class MusicManagementScript : MonoBehaviour
     //   }
     }
 
-    public void playerOneMelody(int songNum, UnityEngine.Vector3 table)
+    public void playerOneMelody(UnityEngine.Vector3 table)
     {
       Debug.Log("Player 1 is playing a thing");
-      Debug.Log(table);
       spawnpoint = table;
 
       int num = Random.Range(0, p1map.Length);
       AkSoundEngine.SetSwitch("Player1Melodies", p1map[num], gameObject);
     }
 
+    public void playerTwoMelody(UnityEngine.Vector3 table)
+    {
+      Debug.Log("Player 2 is playing a thing");
+      spawnpoint = table;
+
+      int num = Random.Range(0, p2map.Length);
+      AkSoundEngine.SetSwitch("Player2Melodies", p2map[num], gameObject);
+    }
+
     string[] p1map = new string[] {
       "P1_Melody01", 
       "P1_Melody02", 
-      "P1_Melody03"
+      "P1_Melody03",
+      "P1_Melody04",
+      "P1_Melody05",
+      "P1_Melody06",
+      "P1_Melody07",
+      "P1_Melody08",
+      };
+
+    string[] p2map = new string[] {
+      "P2_Melody01", 
+      "P2_Melody02", 
+      "P2_Melody03",
+      "P2_Melody04",
+      "P2_Melody05",
+      "P2_Melody06",
+      "P2_Melody07",
+      "P2_Melody08",
       };
 }
 

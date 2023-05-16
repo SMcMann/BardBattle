@@ -60,9 +60,6 @@ public class SongSpawner : MonoBehaviour
         if (player1CloseEnough && !spawedPrompt)
         {
             var offset = new Vector3(0f, 2f, 0);
-            // Instantiate(songPromptInstance, transform.position + offset, transform.rotation);
-            // spawedPrompt = true;
-            // textBox.gameObject.SetActive(true);
         }
         else if (!player1CloseEnough && spawedPrompt)
         {
@@ -75,7 +72,7 @@ public class SongSpawner : MonoBehaviour
             {
               SpawnSong(1); // Temporary placeholder value for the melodyNumber 
               MusicManagementScript mm = MusicManager.GetComponent<MusicManagementScript>();
-              mm.playerOneMelody(1, this.transform.position);
+              mm.playerOneMelody(this.transform.position);
               currentState = State.Playing;
             }
             else if (currentState == State.Playing)
@@ -102,6 +99,8 @@ public class SongSpawner : MonoBehaviour
             if (currentState == State.Ready)
             {
                 SpawnSong(1); // Temporary placeholder value for the melodyNumber 
+                MusicManagementScript mm = MusicManager.GetComponent<MusicManagementScript>();
+                mm.playerTwoMelody(this.transform.position);
                 currentState = State.Playing;
             }
             else if (currentState == State.Playing)
