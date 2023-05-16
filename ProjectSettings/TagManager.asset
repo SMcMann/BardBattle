@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Player1
   - Player2
-  - SongBar
+  - ReadyText
   layers:
   - Default
   - TransparentFX

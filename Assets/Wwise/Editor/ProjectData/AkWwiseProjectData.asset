@@ -544,5 +544,5 @@ MonoBehaviour:
   ExpandedWaapiItemIds: 120000001300000016000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 1
+  currentDataSource: 0
   CurrentPluginConfig: 
