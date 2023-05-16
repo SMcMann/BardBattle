@@ -115,20 +115,19 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    // private void OnEnterChallengeState()
-    // {
-    //     Debug.Log("Entering Challenge State");
+    private void OnEnterChallengeState()
+    {
+        Debug.Log("Entering Challenge State");
 
-    //     // Assume you have access to the variable `table` which is of type `Table`
-    //     SongSpawner.Instance.SpawnSong(1, table);
+        // Spawn the song with melody number 1
+        SongSpawner.Instance.SpawnSong(1);
 
-    //     // Set the challenge duration and song clip to play for the challenge
-    //     challengeTimer = 60f; // Change to your desired challenge duration
+        // Set the challenge duration and song clip to play for the challenge
+        challengeTimer = 60f; // Change to your desired challenge duration
 
-    //     // Change the game state to Challenge
-    //     CurrentGameState = GameState.Challenge;
-    // }
-
+        // Change the game state to Challenge
+        CurrentGameState = GameState.Challenge;
+    }
 
     // handle button presses during the song challenge player1Fame
     public void OnNoteButtonPressed(bool success)
