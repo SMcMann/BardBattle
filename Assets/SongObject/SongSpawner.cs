@@ -9,6 +9,8 @@ public class SongSpawner : MonoBehaviour
 {
     public static SongSpawner Instance;
     public GameObject Song;
+    public GameObject MusicManager;
+
     public TMPro.TextMeshProUGUI textBox;
     public GameObject songPromptInstance;
     public GameObject buttonsContainer;
@@ -83,7 +85,7 @@ public class SongSpawner : MonoBehaviour
     public void StopSong(Table table)
     {
         // Post the Wwise Event to stop the challenge song
-        AkSoundEngine.PostEvent("GameMusicControl", gameObject);
+        // AkSoundEngine.PostEvent("GameMusicControl", gameObject);
 
         table.IsChallengeActive = false;
         Debug.Log("Song stopped. currentState: " + table.CurrentState);

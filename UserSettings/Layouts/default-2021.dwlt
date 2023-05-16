@@ -20,6 +20,7 @@ MonoBehaviour:
     height: 464
   m_ShowMode: 4
   m_Title: Hierarchy
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -276,7 +277,7 @@ MonoBehaviour:
   - {fileID: 19}
   - {fileID: 14}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -361,6 +362,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_treeViewState:
+    scrollPos: {x: 0, y: 0}
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 1f000000
     m_LastClickedID: 31
@@ -975,7 +977,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000e640000
+    m_ExpandedIDs: 00000000e6630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

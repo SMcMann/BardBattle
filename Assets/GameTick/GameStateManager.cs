@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -17,18 +18,40 @@ public class GameStateManager : MonoBehaviour
     public float challengeTimer;
     public float songSpawningTimer;
     [SerializeField] private SongSpawner songSpawner;
+    PlayerControls controls;
+
 
     void Awake()
     {
         if (Instance == null)
         {
+            Input();
             Instance = this;
             DontDestroyOnLoad(gameObject); // Keep the GameStateManager GameObject persistent
+
+            controls = new PlayerControls();
+            controls.Gameplay.ButtonSouth.performed += ctx => Input();
+            controls.Gameplay.move.performed += ctx => Input();
+            controls.Gameplay.Test.performed += ctx => Just();
         }
         else
         {
+          Input2();
             Destroy(gameObject);
         }
+    }
+    void Just()
+    {
+        Debug.Log("22222222222222222");
+    }
+    void Input() 
+    {
+        Debug.Log("I m ded");
+    }
+
+    void Input2() 
+    {
+        Debug.Log("22222222222222222");
     }
 
     void Update()
