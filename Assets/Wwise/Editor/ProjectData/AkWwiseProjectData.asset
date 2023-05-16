@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 2dcfbe703fa44e4f9828c6506f3e4058
     GuidInternal: 
-    m_lastTime: -8585192272564352510
+    m_lastTime: -8585174162890966236
     List:
     - name: DefaultSoundbank
       guid: 58404b40fcd5954dbfa115b24fe08f98
@@ -274,7 +274,7 @@ MonoBehaviour:
     ParentPath: Events\TestMusic
     guid: 76e6a89a6fc2874bad44b340c1cdd99c
     GuidInternal: 
-    m_lastTime: -8585181907018996544
+    m_lastTime: -8585174162897662798
     List:
     - name: GameMusicControl
       guid: 7f2a6c803b1dd64186f1c6d6a40da652
@@ -293,9 +293,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Play_TestBadSounds
-      guid: 56e6191cf2d48c4b80c462f8c1476bb0
-      id: 3757011675
+    - name: P1Melodies
+      guid: d75dcd26ea6d9f4badc2f97f850be1cc
+      id: 321504348
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -303,10 +303,364 @@ MonoBehaviour:
       - ElementName: TestMusic
         ObjectType: 12
         guid: 76e6a89a6fc2874bad44b340c1cdd99c
-      - ElementName: Play_TestBadSounds
+      - ElementName: P1Melodies
+        ObjectType: 4
+        guid: d75dcd26ea6d9f4badc2f97f850be1cc
+      Path: Events\TestMusic\P1Melodies
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: P2Melodies
+      guid: b934a2ad9b613649b5e1dafc5a49d7eb
+      id: 1574324255
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P2Melodies
+        ObjectType: 4
+        guid: b934a2ad9b613649b5e1dafc5a49d7eb
+      Path: Events\TestMusic\P2Melodies
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P1BadSound
+      guid: 56e6191cf2d48c4b80c462f8c1476bb0
+      id: 857585953
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: Play_P1BadSound
         ObjectType: 3
         guid: 56e6191cf2d48c4b80c462f8c1476bb0
-      Path: Events\TestMusic\Play_TestBadSounds
+      Path: Events\TestMusic\Play_P1BadSound
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P1Melody01
+      guid: c26a74fb66ee564f82d328dbdda79d95
+      id: 679995390
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P1Melodies
+        ObjectType: 4
+        guid: d75dcd26ea6d9f4badc2f97f850be1cc
+      - ElementName: Play_P1Melody01
+        ObjectType: 3
+        guid: c26a74fb66ee564f82d328dbdda79d95
+      Path: Events\TestMusic\P1Melodies\Play_P1Melody01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P1Melody02
+      guid: cb868890b21b734190ab6da48c87274e
+      id: 679995389
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P1Melodies
+        ObjectType: 4
+        guid: d75dcd26ea6d9f4badc2f97f850be1cc
+      - ElementName: Play_P1Melody02
+        ObjectType: 3
+        guid: cb868890b21b734190ab6da48c87274e
+      Path: Events\TestMusic\P1Melodies\Play_P1Melody02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P1Melody03
+      guid: ca3828f06c8a8345a1864826ea32bf99
+      id: 679995388
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P1Melodies
+        ObjectType: 4
+        guid: d75dcd26ea6d9f4badc2f97f850be1cc
+      - ElementName: Play_P1Melody03
+        ObjectType: 3
+        guid: ca3828f06c8a8345a1864826ea32bf99
+      Path: Events\TestMusic\P1Melodies\Play_P1Melody03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P1Melody04
+      guid: 3e30b62993ff124da6dae0130ca7aa6f
+      id: 679995387
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P1Melodies
+        ObjectType: 4
+        guid: d75dcd26ea6d9f4badc2f97f850be1cc
+      - ElementName: Play_P1Melody04
+        ObjectType: 3
+        guid: 3e30b62993ff124da6dae0130ca7aa6f
+      Path: Events\TestMusic\P1Melodies\Play_P1Melody04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P1Melody05
+      guid: 2c64b5f6560079428b5399c626363d5a
+      id: 679995386
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P1Melodies
+        ObjectType: 4
+        guid: d75dcd26ea6d9f4badc2f97f850be1cc
+      - ElementName: Play_P1Melody05
+        ObjectType: 3
+        guid: 2c64b5f6560079428b5399c626363d5a
+      Path: Events\TestMusic\P1Melodies\Play_P1Melody05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P1Melody06
+      guid: b7780ae8c8f85846944b2343d4e7ee01
+      id: 679995385
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P1Melodies
+        ObjectType: 4
+        guid: d75dcd26ea6d9f4badc2f97f850be1cc
+      - ElementName: Play_P1Melody06
+        ObjectType: 3
+        guid: b7780ae8c8f85846944b2343d4e7ee01
+      Path: Events\TestMusic\P1Melodies\Play_P1Melody06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P1Melody07
+      guid: 0b6f5209a1f1a44fbd613a1b22766c83
+      id: 679995384
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P1Melodies
+        ObjectType: 4
+        guid: d75dcd26ea6d9f4badc2f97f850be1cc
+      - ElementName: Play_P1Melody07
+        ObjectType: 3
+        guid: 0b6f5209a1f1a44fbd613a1b22766c83
+      Path: Events\TestMusic\P1Melodies\Play_P1Melody07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P1Melody08
+      guid: 64313c3ec7ebd842a2d6fe18c1b637f5
+      id: 679995383
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P1Melodies
+        ObjectType: 4
+        guid: d75dcd26ea6d9f4badc2f97f850be1cc
+      - ElementName: Play_P1Melody08
+        ObjectType: 3
+        guid: 64313c3ec7ebd842a2d6fe18c1b637f5
+      Path: Events\TestMusic\P1Melodies\Play_P1Melody08
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P2Melody01
+      guid: c894dba77b5fa943b918a9e05ec39147
+      id: 4205436013
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P2Melodies
+        ObjectType: 4
+        guid: b934a2ad9b613649b5e1dafc5a49d7eb
+      - ElementName: Play_P2Melody01
+        ObjectType: 3
+        guid: c894dba77b5fa943b918a9e05ec39147
+      Path: Events\TestMusic\P2Melodies\Play_P2Melody01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P2Melody02
+      guid: f741e6d1008712418e5620dfb1e5e020
+      id: 4205436014
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P2Melodies
+        ObjectType: 4
+        guid: b934a2ad9b613649b5e1dafc5a49d7eb
+      - ElementName: Play_P2Melody02
+        ObjectType: 3
+        guid: f741e6d1008712418e5620dfb1e5e020
+      Path: Events\TestMusic\P2Melodies\Play_P2Melody02
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P2Melody03
+      guid: f073dbd0c127d54a8eeb42884cd61bcd
+      id: 4205436015
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P2Melodies
+        ObjectType: 4
+        guid: b934a2ad9b613649b5e1dafc5a49d7eb
+      - ElementName: Play_P2Melody03
+        ObjectType: 3
+        guid: f073dbd0c127d54a8eeb42884cd61bcd
+      Path: Events\TestMusic\P2Melodies\Play_P2Melody03
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P2Melody04
+      guid: 04f1cbfe4ca5104e84b92e4ee4f52290
+      id: 4205436008
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P2Melodies
+        ObjectType: 4
+        guid: b934a2ad9b613649b5e1dafc5a49d7eb
+      - ElementName: Play_P2Melody04
+        ObjectType: 3
+        guid: 04f1cbfe4ca5104e84b92e4ee4f52290
+      Path: Events\TestMusic\P2Melodies\Play_P2Melody04
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P2Melody05
+      guid: be5eff7be696b846b5a57245f6282ea0
+      id: 4205436009
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P2Melodies
+        ObjectType: 4
+        guid: b934a2ad9b613649b5e1dafc5a49d7eb
+      - ElementName: Play_P2Melody05
+        ObjectType: 3
+        guid: be5eff7be696b846b5a57245f6282ea0
+      Path: Events\TestMusic\P2Melodies\Play_P2Melody05
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P2Melody06
+      guid: c6a0adb0dec9b344a527307d3b4863ee
+      id: 4205436010
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P2Melodies
+        ObjectType: 4
+        guid: b934a2ad9b613649b5e1dafc5a49d7eb
+      - ElementName: Play_P2Melody06
+        ObjectType: 3
+        guid: c6a0adb0dec9b344a527307d3b4863ee
+      Path: Events\TestMusic\P2Melodies\Play_P2Melody06
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P2Melody07
+      guid: 0eb27d515fa4e5498fe34ec06c712fd6
+      id: 4205436011
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P2Melodies
+        ObjectType: 4
+        guid: b934a2ad9b613649b5e1dafc5a49d7eb
+      - ElementName: Play_P2Melody07
+        ObjectType: 3
+        guid: 0eb27d515fa4e5498fe34ec06c712fd6
+      Path: Events\TestMusic\P2Melodies\Play_P2Melody07
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_P2Melody08
+      guid: 0e6074ded5b48e49a8d7e30a8c87cf25
+      id: 4205436004
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: P2Melodies
+        ObjectType: 4
+        guid: b934a2ad9b613649b5e1dafc5a49d7eb
+      - ElementName: Play_P2Melody08
+        ObjectType: 3
+        guid: 0e6074ded5b48e49a8d7e30a8c87cf25
+      Path: Events\TestMusic\P2Melodies\Play_P2Melody08
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -324,6 +678,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: bd032d7ec1d51041931071800b1b8a4d
       Path: Events\TestMusic\Player1toSilence
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Player2toSilence
+      guid: 54ffb0b0285f6647a78e496966610747
+      id: 661674012
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 76e6a89a6fc2874bad44b340c1cdd99c
+      - ElementName: Player2toSilence
+        ObjectType: 3
+        guid: 54ffb0b0285f6647a78e496966610747
+      Path: Events\TestMusic\Player2toSilence
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -352,7 +723,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\TestMusic
     guid: 6e86b2d50b15444b8541602046d687a8
     GuidInternal: 
-    m_lastTime: -8585192272567537919
+    m_lastTime: -8585174162897627785
     List:
     - name: TestPlayer1Inactive
       guid: 6232f7d4ea236f458138bfe4f4f92a7b
@@ -382,6 +753,34 @@ MonoBehaviour:
         ObjectType: 13
         guid: f8c0c19df3543744a3fdc260467ae1a3
       Path: Game Parameters\TestMusic\TestPlayer1SC
+    - name: TestPlayer2Inactive
+      guid: a6f18f86eeb1784690455126de33f5f1
+      id: 2999433459
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 6e86b2d50b15444b8541602046d687a8
+      - ElementName: TestPlayer2Inactive
+        ObjectType: 13
+        guid: a6f18f86eeb1784690455126de33f5f1
+      Path: Game Parameters\TestMusic\TestPlayer2Inactive
+    - name: TestPlayer2SC
+      guid: b8cffbd6d950ef46b32b04e84618c641
+      id: 3228127058
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: TestMusic
+        ObjectType: 12
+        guid: 6e86b2d50b15444b8541602046d687a8
+      - ElementName: TestPlayer2SC
+        ObjectType: 13
+        guid: b8cffbd6d950ef46b32b04e84618c641
+      Path: Game Parameters\TestMusic\TestPlayer2SC
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -408,11 +807,11 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: df10089b3818614689045b0b08155d2c
     GuidInternal: 
-    m_lastTime: -8585185082405915581
+    m_lastTime: -8585175687866594429
     List:
-    - name: TestPlayer1Instrument
+    - name: Player1Instrument
       guid: d8deb4dfff6c1e4b8438b9b25c284820
-      id: 16616508
+      id: 3616549624
       PathAndIcons:
       - ElementName: Switches
         ObjectType: 5
@@ -420,14 +819,14 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: df10089b3818614689045b0b08155d2c
-      - ElementName: TestPlayer1Instrument
+      - ElementName: Player1Instrument
         ObjectType: 11
         guid: d8deb4dfff6c1e4b8438b9b25c284820
-      Path: Switches\Default Work Unit\TestPlayer1Instrument
+      Path: Switches\Default Work Unit\Player1Instrument
       values:
-      - name: Lute
+      - name: P1_Lute
         guid: 10668ada5eea644dad921dec2972eeda
-        id: 241555877
+        id: 3977814771
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -435,15 +834,15 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: df10089b3818614689045b0b08155d2c
-        - ElementName: TestPlayer1Instrument
+        - ElementName: Player1Instrument
           ObjectType: 11
           guid: d8deb4dfff6c1e4b8438b9b25c284820
-        - ElementName: Lute
+        - ElementName: P1_Lute
           ObjectType: 10
           guid: 10668ada5eea644dad921dec2972eeda
-      - name: Piano
+      - name: P1_Piano
         guid: ee1542c19161d44fa67c9389e99fdda7
-        id: 1324340420
+        id: 602148438
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -451,18 +850,34 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: df10089b3818614689045b0b08155d2c
-        - ElementName: TestPlayer1Instrument
+        - ElementName: Player1Instrument
           ObjectType: 11
           guid: d8deb4dfff6c1e4b8438b9b25c284820
-        - ElementName: Piano
+        - ElementName: P1_Piano
           ObjectType: 10
           guid: ee1542c19161d44fa67c9389e99fdda7
+      - name: P1_Sax
+        guid: edb2194a47ce084fac94ed67a4892b62
+        id: 1318007917
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player1Instrument
+          ObjectType: 11
+          guid: d8deb4dfff6c1e4b8438b9b25c284820
+        - ElementName: P1_Sax
+          ObjectType: 10
+          guid: edb2194a47ce084fac94ed67a4892b62
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
-    - name: TestPlayer1Melodies
+    - name: Player1Melodies
       guid: ef6ac369442e8348b1ff5d4f1d1c6915
-      id: 4142908555
+      id: 988517055
       PathAndIcons:
       - ElementName: Switches
         ObjectType: 5
@@ -470,30 +885,14 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: df10089b3818614689045b0b08155d2c
-      - ElementName: TestPlayer1Melodies
+      - ElementName: Player1Melodies
         ObjectType: 11
         guid: ef6ac369442e8348b1ff5d4f1d1c6915
-      Path: Switches\Default Work Unit\TestPlayer1Melodies
+      Path: Switches\Default Work Unit\Player1Melodies
       values:
-      - name: Silence
-        guid: 25f5098780ef894fbcdc8e97f25751a4
-        id: 3041563226
-        PathAndIcons:
-        - ElementName: Switches
-          ObjectType: 5
-          guid: 00000000000000000000000000000000
-        - ElementName: Default Work Unit
-          ObjectType: 12
-          guid: df10089b3818614689045b0b08155d2c
-        - ElementName: TestPlayer1Melodies
-          ObjectType: 11
-          guid: ef6ac369442e8348b1ff5d4f1d1c6915
-        - ElementName: Silence
-          ObjectType: 10
-          guid: 25f5098780ef894fbcdc8e97f25751a4
-      - name: Test1
+      - name: P1_Melody01
         guid: 23b993500b7efb46adfd20b4d269e095
-        id: 576110586
+        id: 3624096246
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -501,15 +900,15 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: df10089b3818614689045b0b08155d2c
-        - ElementName: TestPlayer1Melodies
+        - ElementName: Player1Melodies
           ObjectType: 11
           guid: ef6ac369442e8348b1ff5d4f1d1c6915
-        - ElementName: Test1
+        - ElementName: P1_Melody01
           ObjectType: 10
           guid: 23b993500b7efb46adfd20b4d269e095
-      - name: Test2_Real
+      - name: P1_Melody02
         guid: 4288dbab74ba4643ab01d36ef61091bf
-        id: 4007995432
+        id: 3624096245
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -517,12 +916,352 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: df10089b3818614689045b0b08155d2c
-        - ElementName: TestPlayer1Melodies
+        - ElementName: Player1Melodies
           ObjectType: 11
           guid: ef6ac369442e8348b1ff5d4f1d1c6915
-        - ElementName: Test2_Real
+        - ElementName: P1_Melody02
           ObjectType: 10
           guid: 4288dbab74ba4643ab01d36ef61091bf
+      - name: P1_Melody03
+        guid: 7d1e3c0af63d3c4cb4d1e759203026b8
+        id: 3624096244
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player1Melodies
+          ObjectType: 11
+          guid: ef6ac369442e8348b1ff5d4f1d1c6915
+        - ElementName: P1_Melody03
+          ObjectType: 10
+          guid: 7d1e3c0af63d3c4cb4d1e759203026b8
+      - name: P1_Melody04
+        guid: efa05fc00372bf41aaed50edc2b71674
+        id: 3624096243
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player1Melodies
+          ObjectType: 11
+          guid: ef6ac369442e8348b1ff5d4f1d1c6915
+        - ElementName: P1_Melody04
+          ObjectType: 10
+          guid: efa05fc00372bf41aaed50edc2b71674
+      - name: P1_Melody05
+        guid: f0cbb07b4ab58c47afdb6929cef5e9fc
+        id: 3624096242
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player1Melodies
+          ObjectType: 11
+          guid: ef6ac369442e8348b1ff5d4f1d1c6915
+        - ElementName: P1_Melody05
+          ObjectType: 10
+          guid: f0cbb07b4ab58c47afdb6929cef5e9fc
+      - name: P1_Melody06
+        guid: 347313cfcf4be2438c838513956a5299
+        id: 3624096241
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player1Melodies
+          ObjectType: 11
+          guid: ef6ac369442e8348b1ff5d4f1d1c6915
+        - ElementName: P1_Melody06
+          ObjectType: 10
+          guid: 347313cfcf4be2438c838513956a5299
+      - name: P1_Melody07
+        guid: f1bac0aed1bb8f43a83566218799a6cb
+        id: 3624096240
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player1Melodies
+          ObjectType: 11
+          guid: ef6ac369442e8348b1ff5d4f1d1c6915
+        - ElementName: P1_Melody07
+          ObjectType: 10
+          guid: f1bac0aed1bb8f43a83566218799a6cb
+      - name: P1_Melody08
+        guid: 4a67030ca34f6f42a8d03f773ddb1cd4
+        id: 3624096255
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player1Melodies
+          ObjectType: 11
+          guid: ef6ac369442e8348b1ff5d4f1d1c6915
+        - ElementName: P1_Melody08
+          ObjectType: 10
+          guid: 4a67030ca34f6f42a8d03f773ddb1cd4
+      - name: P1_Silence
+        guid: 25f5098780ef894fbcdc8e97f25751a4
+        id: 1904461760
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player1Melodies
+          ObjectType: 11
+          guid: ef6ac369442e8348b1ff5d4f1d1c6915
+        - ElementName: P1_Silence
+          ObjectType: 10
+          guid: 25f5098780ef894fbcdc8e97f25751a4
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Player2Instrument
+      guid: 5da420a7b61cab4585948e7ac46da3e2
+      id: 1022050671
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: df10089b3818614689045b0b08155d2c
+      - ElementName: Player2Instrument
+        ObjectType: 11
+        guid: 5da420a7b61cab4585948e7ac46da3e2
+      Path: Switches\Default Work Unit\Player2Instrument
+      values:
+      - name: P2_Lute
+        guid: e9b4b679d8143d4dacb1afb34ca97047
+        id: 2895543962
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Instrument
+          ObjectType: 11
+          guid: 5da420a7b61cab4585948e7ac46da3e2
+        - ElementName: P2_Lute
+          ObjectType: 10
+          guid: e9b4b679d8143d4dacb1afb34ca97047
+      - name: P2_Piano
+        guid: 14a8420b763abe45ad9e7511e668f3cf
+        id: 3813909237
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Instrument
+          ObjectType: 11
+          guid: 5da420a7b61cab4585948e7ac46da3e2
+        - ElementName: P2_Piano
+          ObjectType: 10
+          guid: 14a8420b763abe45ad9e7511e668f3cf
+      - name: P2_Sax
+        guid: 723b9d16b0d41d4d9a209157690c3134
+        id: 2606392274
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Instrument
+          ObjectType: 11
+          guid: 5da420a7b61cab4585948e7ac46da3e2
+        - ElementName: P2_Sax
+          ObjectType: 10
+          guid: 723b9d16b0d41d4d9a209157690c3134
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Player2Melodies
+      guid: 1c710c64f7f61446abf88182b318f0f6
+      id: 1592311548
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: df10089b3818614689045b0b08155d2c
+      - ElementName: Player2Melodies
+        ObjectType: 11
+        guid: 1c710c64f7f61446abf88182b318f0f6
+      Path: Switches\Default Work Unit\Player2Melodies
+      values:
+      - name: P2_Melody01
+        guid: ffe507d0e7f53340b23ac2dfb519cd02
+        id: 2300316387
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Melodies
+          ObjectType: 11
+          guid: 1c710c64f7f61446abf88182b318f0f6
+        - ElementName: P2_Melody01
+          ObjectType: 10
+          guid: ffe507d0e7f53340b23ac2dfb519cd02
+      - name: P2_Melody02
+        guid: 476c1af2aae57a4f923bb2a6c90743a9
+        id: 2300316384
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Melodies
+          ObjectType: 11
+          guid: 1c710c64f7f61446abf88182b318f0f6
+        - ElementName: P2_Melody02
+          ObjectType: 10
+          guid: 476c1af2aae57a4f923bb2a6c90743a9
+      - name: P2_Melody03
+        guid: 28e486ec275e9a48a203803d476f78bd
+        id: 2300316385
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Melodies
+          ObjectType: 11
+          guid: 1c710c64f7f61446abf88182b318f0f6
+        - ElementName: P2_Melody03
+          ObjectType: 10
+          guid: 28e486ec275e9a48a203803d476f78bd
+      - name: P2_Melody04
+        guid: f0335eceb857394285dc241c4a7e0a13
+        id: 2300316390
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Melodies
+          ObjectType: 11
+          guid: 1c710c64f7f61446abf88182b318f0f6
+        - ElementName: P2_Melody04
+          ObjectType: 10
+          guid: f0335eceb857394285dc241c4a7e0a13
+      - name: P2_Melody05
+        guid: 38543da769333240a598a491b4ffa5d3
+        id: 2300316391
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Melodies
+          ObjectType: 11
+          guid: 1c710c64f7f61446abf88182b318f0f6
+        - ElementName: P2_Melody05
+          ObjectType: 10
+          guid: 38543da769333240a598a491b4ffa5d3
+      - name: P2_Melody06
+        guid: 3329a4d7d56098469e708e3183e7913a
+        id: 2300316388
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Melodies
+          ObjectType: 11
+          guid: 1c710c64f7f61446abf88182b318f0f6
+        - ElementName: P2_Melody06
+          ObjectType: 10
+          guid: 3329a4d7d56098469e708e3183e7913a
+      - name: P2_Melody07
+        guid: 6e635f04d07c4a4b8c15a0a45521e821
+        id: 2300316389
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Melodies
+          ObjectType: 11
+          guid: 1c710c64f7f61446abf88182b318f0f6
+        - ElementName: P2_Melody07
+          ObjectType: 10
+          guid: 6e635f04d07c4a4b8c15a0a45521e821
+      - name: P2_Melody08
+        guid: 9d5627e3ecfb6046a5f19e3e721d02e2
+        id: 2300316394
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Melodies
+          ObjectType: 11
+          guid: 1c710c64f7f61446abf88182b318f0f6
+        - ElementName: P2_Melody08
+          ObjectType: 10
+          guid: 9d5627e3ecfb6046a5f19e3e721d02e2
+      - name: P2_Silence
+        guid: 78aa64356b527a4da4d29af1ec651de1
+        id: 2970670987
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: df10089b3818614689045b0b08155d2c
+        - ElementName: Player2Melodies
+          ObjectType: 11
+          guid: 1c710c64f7f61446abf88182b318f0f6
+        - ElementName: P2_Silence
+          ObjectType: 10
+          guid: 78aa64356b527a4da4d29af1ec651de1
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -540,8 +1279,8 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8585192274306795033
     List: []
-  ExpandedFileSystemItemIds: 020000000d000000110000001200000013000000160000001d000000
-  ExpandedWaapiItemIds: 120000001300000016000000
+  ExpandedFileSystemItemIds: 02000000
+  ExpandedWaapiItemIds: 02000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 1
