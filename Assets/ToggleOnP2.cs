@@ -16,8 +16,6 @@ public class ToggleOnP2 : MonoBehaviour
             playertiefling.SetActive(true);
             MainMenus.p2goblin = false;
             MainMenus.p2tiefling = true;
-            Debug.Log(MainMenus.p2goblin);
-            Debug.Log(MainMenus.p2tiefling);
     }
     public void SwitchImages()
     {
@@ -29,8 +27,6 @@ public class ToggleOnP2 : MonoBehaviour
             playertiefling.SetActive(true);
             MainMenus.p2goblin = false;
             MainMenus.p2tiefling = true;
-            Debug.Log(MainMenus.p2goblin);
-            Debug.Log(MainMenus.p2tiefling);
         }
         else if (playergoblin.activeInHierarchy == false)
         {
@@ -39,8 +35,6 @@ public class ToggleOnP2 : MonoBehaviour
             playertiefling.SetActive(false);
             MainMenus.p2goblin = true;
             MainMenus.p2tiefling = false;
-            Debug.Log(MainMenus.p2goblin);
-            Debug.Log(MainMenus.p2tiefling);
         }
     }
 

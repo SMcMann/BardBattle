@@ -12,10 +12,10 @@ public class P2ScoreBar : MonoBehaviour
 
         P2slider.value = GameStateManager.player2Fame;
         
-        if (GameStateManager.player2Fame != 100)
-        {
-            GameStateManager.player2Fame += 1;
-        }
+     //   if (GameStateManager.player2Fame != 100)
+    //    {
+    //        GameStateManager.player2Fame += 1;
+   //     }
 
     }
 }

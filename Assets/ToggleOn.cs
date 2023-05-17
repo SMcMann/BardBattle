@@ -16,11 +16,6 @@ public class ToggleOn : MonoBehaviour
             playertiefling.SetActive(false);
             MainMenus.p1goblin = true;
             MainMenus.p1tiefling = false;
-            Debug.Log(MainMenus.p1goblin);
-            GameStateManager.player1Fame += 10;
-            Debug.Log(GameStateManager.player1Fame);
-            Debug.Log(MainMenus.p1tiefling);
-
     }
     
     public void SwitchImages()
@@ -31,8 +26,6 @@ public class ToggleOn : MonoBehaviour
             playertiefling.SetActive(true);
             MainMenus.p1goblin = false;
             MainMenus.p1tiefling = true;
-            Debug.Log(MainMenus.p1goblin);
-            Debug.Log(MainMenus.p1tiefling);
         }
         else if (playergoblin.activeInHierarchy == false)
         {
@@ -40,8 +33,6 @@ public class ToggleOn : MonoBehaviour
             playertiefling.SetActive(false);
             MainMenus.p1goblin = true;
             MainMenus.p1tiefling = false;
-            Debug.Log(MainMenus.p1goblin);
-            Debug.Log(MainMenus.p1tiefling);
         }
     }
 
