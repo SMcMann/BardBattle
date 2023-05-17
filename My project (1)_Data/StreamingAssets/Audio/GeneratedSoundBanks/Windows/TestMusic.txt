@@ -1,0 +1,138 @@
+Event	ID	Name			Wwise Object Path	Notes
+	661674012	Player2toSilence			\TestMusic\Player2toSilence	
+	679995383	Play_P1Melody08			\TestMusic\P1Melodies\Play_P1Melody08	
+	679995384	Play_P1Melody07			\TestMusic\P1Melodies\Play_P1Melody07	
+	679995385	Play_P1Melody06			\TestMusic\P1Melodies\Play_P1Melody06	
+	679995386	Play_P1Melody05			\TestMusic\P1Melodies\Play_P1Melody05	
+	679995387	Play_P1Melody04			\TestMusic\P1Melodies\Play_P1Melody04	
+	679995388	Play_P1Melody03			\TestMusic\P1Melodies\Play_P1Melody03	
+	679995389	Play_P1Melody02			\TestMusic\P1Melodies\Play_P1Melody02	
+	679995390	Play_P1Melody01			\TestMusic\P1Melodies\Play_P1Melody01	
+	857585953	Play_P1BadSound			\TestMusic\Play_P1BadSound	
+	3469358342	Play_P2BadSound			\TestMusic\Play_P2BadSound	
+	4205436004	Play_P2Melody08			\TestMusic\P2Melodies\Play_P2Melody08	
+	4205436008	Play_P2Melody04			\TestMusic\P2Melodies\Play_P2Melody04	
+	4205436009	Play_P2Melody05			\TestMusic\P2Melodies\Play_P2Melody05	
+	4205436010	Play_P2Melody06			\TestMusic\P2Melodies\Play_P2Melody06	
+	4205436011	Play_P2Melody07			\TestMusic\P2Melodies\Play_P2Melody07	
+	4205436013	Play_P2Melody01			\TestMusic\P2Melodies\Play_P2Melody01	
+	4205436014	Play_P2Melody02			\TestMusic\P2Melodies\Play_P2Melody02	
+	4205436015	Play_P2Melody03			\TestMusic\P2Melodies\Play_P2Melody03	
+	4231158115	GameMusicControl			\TestMusic\GameMusicControl	
+	4271553061	Player1toSilence			\TestMusic\Player1toSilence	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	988517055	Player1Melodies			\Default Work Unit\Player1Melodies	
+	1022050671	Player2Instrument			\Default Work Unit\Player2Instrument	
+	1592311548	Player2Melodies			\Default Work Unit\Player2Melodies	
+	3616549624	Player1Instrument			\Default Work Unit\Player1Instrument	
+
+Switch	ID	Name	Switch Group			Notes
+	1904461760	P1_Silence	Player1Melodies			
+	3624096240	P1_Melody07	Player1Melodies			
+	3624096241	P1_Melody06	Player1Melodies			
+	3624096242	P1_Melody05	Player1Melodies			
+	3624096243	P1_Melody04	Player1Melodies			
+	3624096244	P1_Melody03	Player1Melodies			
+	3624096245	P1_Melody02	Player1Melodies			
+	3624096246	P1_Melody01	Player1Melodies			
+	3624096255	P1_Melody08	Player1Melodies			
+	2606392274	P2_Sax	Player2Instrument			
+	2895543962	P2_Lute	Player2Instrument			
+	3813909237	P2_Piano	Player2Instrument			
+	2300316384	P2_Melody02	Player2Melodies			
+	2300316385	P2_Melody03	Player2Melodies			
+	2300316387	P2_Melody01	Player2Melodies			
+	2300316388	P2_Melody06	Player2Melodies			
+	2300316389	P2_Melody07	Player2Melodies			
+	2300316390	P2_Melody04	Player2Melodies			
+	2300316391	P2_Melody05	Player2Melodies			
+	2300316394	P2_Melody08	Player2Melodies			
+	2970670987	P2_Silence	Player2Melodies			
+	602148438	P1_Piano	Player1Instrument			
+	1318007917	P1_Sax	Player1Instrument			
+	3977814771	P1_Lute	Player1Instrument			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2960229541	TestPlayer1SC			\TestMusic\TestPlayer1SC	
+	2999433459	TestPlayer2Inactive			\TestMusic\TestPlayer2Inactive	
+	3228127058	TestPlayer2SC			\TestMusic\TestPlayer2SC	
+	3338826524	TestPlayer1Inactive			\TestMusic\TestPlayer1Inactive	
+
+Effect plug-ins	ID	Name	Type				Notes
+	145372601	Meter (Custom)	Wwise Meter			
+	413641437	Meter (Custom)	Wwise Meter			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	15575662	BB_Lute_Note_Bad_2	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\BB_Lute_Note_Bad_2_10C4C929.wem		\Actor-Mixer Hierarchy\InteractiveMusicTest\P1BadSounds\LuteBad\BB_Lute_Note_Bad_2		44196
+	22357422	MIDI_TavernMelody_Lute_C1_5	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C1_5_D5A61E63.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_5\MIDI_TavernMelody_Lute_C1_5		189
+	29360040	MIDI_TavernMelody_Lute_C2_5	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C2_5_BD1CA54F.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_5_1\MIDI_TavernMelody_Lute_C2_5		219
+	40866530	MIDI_TavernMelody_Lute_D1_7	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D1_7_7A7D3C34.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_7\MIDI_TavernMelody_Lute_D1_7		187
+	66815323	MIDI_TavernMelody_Lute_C#2_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#2_1_22AA4F4E.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_1_1\MIDI_TavernMelody_Lute_C#2_1		160
+	74005650	MIDI_TavernMelody_Lute_D2_3	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D2_3_6FC58775.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_3_1\MIDI_TavernMelody_Lute_D2_3		200
+	114605547	MX_TavernMelody_Sax_7	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Sax_7_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_7\MX_TavernMelody_Sax_7		2127788
+	129900520	MIDI_TavernMelody_Lute_C#1_3	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#1_3_C04DA9EE.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_3\MIDI_TavernMelody_Lute_C#1_3		177
+	140489303	MX_TavernMelody_Sax_5	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Sax_5_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_5\MX_TavernMelody_Sax_5		2127788
+	154538694	MIDI_TavernMelody_Lute_D1_4	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D1_4_C04DA9EE.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_4\MIDI_TavernMelody_Lute_D1_4		184
+	159808206	MIDI_TavernMelody_Lute_D2_5	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D2_5_BD1CA54F.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_5_1\MIDI_TavernMelody_Lute_D2_5		219
+	171523208	Sax_BadNote_01	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\Sax_BadNote_01_10C4C929.wem		\Actor-Mixer Hierarchy\InteractiveMusicTest\P1BadSounds\Sax_BadNote_01		130488
+	182309939	MIDI_TavernMelody_Lute_D1_2	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D1_2_D6175082.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_2\MIDI_TavernMelody_Lute_D1_2		142
+	218082050	MX_TavernMelody_Lute_7_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Lute_7_1_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Lute\MX_TavernMelody_Lute_7_1\MX_TavernMelody_Lute_7_1		1628404
+	237282094	MIDI_TavernMelody_Lute_C#2_3	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#2_3_6FC58775.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_3_1\MIDI_TavernMelody_Lute_C#2_3		200
+	249438375	MIDI_TavernMelody_Lute_C2_3	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C2_3_6FC58775.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_3_1\MIDI_TavernMelody_Lute_C2_3		200
+	272748689	MIDI_TavernMelody_Lute_C2_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C2_1_22AA4F4E.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_1_1\MIDI_TavernMelody_Lute_C2_1		160
+	279284255	MIDI_TavernMelody_Lute_C1_7	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C1_7_7A7D3C34.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_7\MIDI_TavernMelody_Lute_C1_7		187
+	320513860	MX_TavernMelody_Lute_2_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Lute_2_1_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Lute\MX_TavernMelody_Lute_2_1\MX_TavernMelody_Lute_2_1		1628404
+	330619842	MX_TavernMelody_Lute_8_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Lute_8_1_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Lute\MX_TavernMelody_Lute_8_1\MX_TavernMelody_Lute_8_1		1628404
+	358339027	MIDI_TavernMelody_Lute_C#2_8	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#2_8_41F63F72.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_8_1\MIDI_TavernMelody_Lute_C#2_8		147
+	361382828	MX_TavernMelody_Lute_2_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D2_2_22AA4F4E.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_2_1\MX_TavernMelody_Lute_2_1		161
+	364786745	MX_TavernMelody_Sax_6	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Sax_6_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_6\MX_TavernMelody_Sax_6		2294864
+	401710505	MIDI_TavernMelody_Lute_D2_4	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D2_4_6FC58775.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_4_1\MIDI_TavernMelody_Lute_D2_4		200
+	403024353	MX_TavernMelody_Sax_3	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Sax_3_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_3\MX_TavernMelody_Sax_3		2233020
+	406768701	MX_TavernMelody_Lute_2_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#2_2_22AA4F4E.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_2_1\MX_TavernMelody_Lute_2_1		161
+	408013005	MIDI_TavernMelody_Lute_C1_8	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C1_8_7BF26596.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_8\MIDI_TavernMelody_Lute_C1_8		127
+	424969309	MIDI_TavernMelody_Lute_C#2_5	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#2_5_BD1CA54F.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_5_1\MIDI_TavernMelody_Lute_C#2_5		219
+	448764319	MX_TavernMelody_Sax_2	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Sax_2_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_2\MX_TavernMelody_Sax_2		2127788
+	451974042	MIDI_TavernMelody_Lute_D2_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D2_1_22AA4F4E.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_1_1\MIDI_TavernMelody_Lute_D2_1		160
+	468235014	MIDI_TavernMelody_Lute_C2_8	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C2_8_41F63F72.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_8_1\MIDI_TavernMelody_Lute_C2_8		147
+	485922313	MIDI_TavernMelody_Lute_C#2_7	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#2_7_B9729D48.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_7_1\MIDI_TavernMelody_Lute_C#2_7		215
+	495400703	MIDI_TavernMelody_Lute_C#1_7	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#1_7_7A7D3C34.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_7\MIDI_TavernMelody_Lute_C#1_7		187
+	569731441	MIDI_TavernMelody_Lute_D1_8	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D1_8_7BF26596.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_8\MIDI_TavernMelody_Lute_D1_8		127
+	575336597	MIDI_TavernMelody_Lute_C2_4	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C2_4_6FC58775.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_4_1\MIDI_TavernMelody_Lute_C2_4		200
+	575366660	MX_TavernMelody_Lute_2_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C2_2_22AA4F4E.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_2_1\MX_TavernMelody_Lute_2_1		161
+	596289191	Test Silence 130	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\Test Silence 130_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\P1_Silence 130\Test Silence 130\Test Silence 130		1418864
+	596493329	MIDI_TavernMelody_Lute_C2_7	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C2_7_B9729D48.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_7_1\MIDI_TavernMelody_Lute_C2_7		215
+	601414201	MIDI_TavernMelody_Lute_C1_3	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C1_3_C04DA9EE.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_3\MIDI_TavernMelody_Lute_C1_3		177
+	623084312	MIDI_TavernMelody_Lute_C#2_4	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#2_4_6FC58775.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_4_1\MIDI_TavernMelody_Lute_C#2_4		200
+	630419880	MIDI_TavernMelody_Lute_D2_6	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D2_6_22AA4F4E.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_6_1\MIDI_TavernMelody_Lute_D2_6		162
+	639818632	MX_LuteNFlute_C_130BPM_4-4 (1)	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_LuteNFlute_C_130BPM_4-4 (1)_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Backing Track\BackingTrack130\MX_LuteNFlute_C_130BPM_4-4 (1)		28658312
+	641577894	MIDI_TavernMelody_Lute_C#1_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#1_1_D6175082.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_1\MIDI_TavernMelody_Lute_C#1_1		139
+	649149999	MIDI_TavernMelody_Lute_C1_4	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C1_4_C04DA9EE.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_4\MIDI_TavernMelody_Lute_C1_4		184
+	673052768	MIDI_TavernMelody_Lute_C2_6	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C2_6_22AA4F4E.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_6_1\MIDI_TavernMelody_Lute_C2_6		162
+	674243730	MIDI_TavernMelody_Lute_C#1_8	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#1_8_7BF26596.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_8\MIDI_TavernMelody_Lute_C#1_8		127
+	674852606	MIDI_TavernMelody_Lute_C1_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C1_1_D6175082.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_1\MIDI_TavernMelody_Lute_C1_1		139
+	704349887	MIDI_TavernMelody_Lute_D1_3	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D1_3_C04DA9EE.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_3\MIDI_TavernMelody_Lute_D1_3		177
+	717781455	MX_TavernMelody_Sax_4	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Sax_4_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_4\MX_TavernMelody_Sax_4		2270864
+	720542276	Silence 130 (SFX)	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\Silence 130 (SFX)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Silence 130 (SFX)		1418864
+	729962468	MX_TavernMelody_Lute_3_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Lute_3_1_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Lute\MX_TavernMelody_Lute_3_1\MX_TavernMelody_Lute_3_1		1954064
+	736479772	MIDI_TavernMelody_Lute_C#2_6	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#2_6_22AA4F4E.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_6_1\MIDI_TavernMelody_Lute_C#2_6		162
+	737008557	MX_TavernMelody_Sax_8	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Sax_8_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_8\MX_TavernMelody_Sax_8		2127788
+	788804399	MIDI_TavernMelody_Lute_C#1_5	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#1_5_D5A61E63.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_5\MIDI_TavernMelody_Lute_C#1_5		189
+	809654012	MIDI_TavernMelody_Lute_D1_6	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D1_6_D6175082.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_6\MIDI_TavernMelody_Lute_D1_6		141
+	816703125	MIDI_TavernMelody_Lute_C1_6	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C1_6_D6175082.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_6\MIDI_TavernMelody_Lute_C1_6		141
+	848917705	MIDI_TavernMelody_Lute_D2_7	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D2_7_B9729D48.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_7_1\MIDI_TavernMelody_Lute_D2_7		215
+	867300594	BB_Lute_Note_Bad_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\BB_Lute_Note_Bad_1_10C4C929.wem		\Actor-Mixer Hierarchy\InteractiveMusicTest\P1BadSounds\LuteBad\BB_Lute_Note_Bad_1		55228
+	895986873	MX_TavernMelody_Lute_6_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Lute_6_1_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Lute\MX_TavernMelody_Lute_6_1\MX_TavernMelody_Lute_6_1		1628404
+	896316464	MIDI_TavernMelody_Lute_D1_5	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D1_5_D5A61E63.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_5\MIDI_TavernMelody_Lute_D1_5		189
+	900729668	MIDI_TavernMelody_Lute_C#1_6	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#1_6_D6175082.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_6\MIDI_TavernMelody_Lute_C#1_6		141
+	942914982	MIDI_TavernMelody_Lute_D2_8	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D2_8_41F63F72.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 2\Lute\MX_TavernMelody_Lute_8_1\MIDI_TavernMelody_Lute_D2_8		147
+	947458927	MX_TavernMelody_Lute_5_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Lute_5_1_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Lute\MX_TavernMelody_Lute_5_1\MX_TavernMelody_Lute_5_1		2279728
+	951309271	MX_TavernMelody_Sax_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Sax_1_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_1\MX_TavernMelody_Sax_1		2127788
+	977623987	MIDI_TavernMelody_Lute_C#1_2	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#1_2_D6175082.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_2\MIDI_TavernMelody_Lute_C#1_2		142
+	982497348	MX_TavernMelody_Lute_4_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Lute_4_1_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Lute\MX_TavernMelody_Lute_4_1\MX_TavernMelody_Lute_4_1		1954064
+	983678663	BB_Lute_Note_Bad_3	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\BB_Lute_Note_Bad_3_10C4C929.wem		\Actor-Mixer Hierarchy\InteractiveMusicTest\P1BadSounds\LuteBad\BB_Lute_Note_Bad_3		56020
+	992550684	MIDI_TavernMelody_Lute_C#1_4	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C#1_4_C04DA9EE.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_4\MIDI_TavernMelody_Lute_C#1_4		184
+	1013486881	MIDI_TavernMelody_Lute_D1_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_D1_1_D6175082.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_1\MIDI_TavernMelody_Lute_D1_1		139
+	1037050793	MX_TavernMelody_Lute_1_1	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MX_TavernMelody_Lute_1_1_D79FB2B7.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Lute\MX_TavernMelody_Lute_1_1\MX_TavernMelody_Lute_1_1		1628404
+	1039524794	MIDI_TavernMelody_Lute_C1_2	C:\Users\Josh\Documents\GitHub\Bard-Battle-Wwise\Team 8 Bard Battle\.cache\Windows\SFX\MIDI_TavernMelody_Lute_C1_2_D6175082.wem		\Interactive Music Hierarchy\TestUpdated Music\Test Tracks\Player 1\Sax\MX_TavernMelody_Sax_2\MIDI_TavernMelody_Lute_C1_2		142
+
