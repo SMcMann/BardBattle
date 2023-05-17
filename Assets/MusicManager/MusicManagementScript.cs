@@ -61,7 +61,7 @@ public class MusicManagementScript : MonoBehaviour
 
       // allow input for a note
       if (eventinfo.byOnOffNote.Equals(37) && (count %2 == 1) ) {
-        Debug.Log("Toggling not ready status!");  
+        Debug.Log("Toggling ready status!");  
       }
 
       count++;
