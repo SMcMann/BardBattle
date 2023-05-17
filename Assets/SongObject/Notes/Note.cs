@@ -38,6 +38,7 @@ public class Note : MonoBehaviour
         Debug.Log(context.action.name.ToString());
         if (ready && context.action.name.ToString() == noteName ) {
           Destroy(gameObject);
+          GameStateManager.player1Fame += 1;
           //     SongLogic sn = song.GetComponent<SongLogic>();
           //     sn.testFunction(expectedInput);          
         }
