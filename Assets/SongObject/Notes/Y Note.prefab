@@ -157,7 +157,47 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ec39174f-57ef-4131-b2ed-e411570a155e
+    m_ActionName: Gameplay/Button North
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 989c2f30-593b-433d-833c-7eb07d964a0b
+    m_ActionName: Gameplay/Button East
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9c1c2dda-1ad5-4051-905f-72eb01ba5bc8
+    m_ActionName: Gameplay/Button South
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2ecf74ed-71ce-42b6-966d-373f65174847
+    m_ActionName: Gameplay/Button West
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 00058363-abfb-414b-a67e-5a09278a79fa
+    m_ActionName: Gameplay/MoveUp
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84dcb810-1db2-4ec0-8870-6fa549fdb4db
+    m_ActionName: Gameplay/MoveDown
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 035128c2-e502-44d0-b9d9-3b0573762610
+    m_ActionName: Gameplay/MoveRight
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b332c46e-3373-436e-9e16-ee94daba9f3f
+    m_ActionName: Gameplay/MoveLeft
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c536f5c4-88e2-467e-b1c6-12c6b2ed9640
+    m_ActionName: Gameplay/Right Trigger
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 41924ba5-fe4f-4426-9995-f9e851a20a4e
+    m_ActionName: Gameplay/Left Trigger
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay

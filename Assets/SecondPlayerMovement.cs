@@ -28,7 +28,7 @@ public class SecondPlayerMovement : MonoBehaviour
     void Awake()
     {
         controls = new PlayerControls();
-        controls.Gameplay.MoveUp.started += ctx => MoveUp = true;
+        controls.Gameplay.MoveUp.started += ctx => { Debug.Log(ctx.control.ToString().Contains("1")); MoveUp = true; };
         controls.Gameplay.MoveUp.canceled += ctx => MoveUp = false;
         controls.Gameplay.MoveDown.started += ctx => MoveDown = true;
         controls.Gameplay.MoveDown.canceled += ctx => MoveDown = false;

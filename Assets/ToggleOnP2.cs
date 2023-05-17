@@ -25,6 +25,7 @@ public class ToggleOnP2 : MonoBehaviour
 
         if (playergoblin.activeInHierarchy == true)
         {
+            AkSoundEngine.SetSwitch("Player2Instrument", "P2_Lute", gameObject);
             playergoblin.SetActive(false);
             playertiefling.SetActive(true);
             MainMenus.p2goblin = false;
@@ -34,6 +35,8 @@ public class ToggleOnP2 : MonoBehaviour
         }
         else if (playergoblin.activeInHierarchy == false)
         {
+          
+            AkSoundEngine.SetSwitch("Player2Instrument", "P2_Sax", gameObject);
             playergoblin.SetActive(true);
             playertiefling.SetActive(false);
             MainMenus.p2goblin = true;

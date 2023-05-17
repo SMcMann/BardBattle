@@ -17,8 +17,8 @@ public class MusicManagementScript : MonoBehaviour
     {
         uint CallbackType = (uint)(AkCallbackType.AK_MIDIEvent | AkCallbackType.AK_MusicSyncUserCue);
         MusicEvent.Post(gameObject, CallbackType, CallbackFunction);
-        AkSoundEngine.SetSwitch("Player1Instrument", "P1_Lute", gameObject);
-        AkSoundEngine.SetSwitch("Player2Instrument", "P2_Sax", gameObject);
+        //  AkSoundEngine.SetSwitch("Player1Instrument", "P1_Lute", gameObject);
+        //  AkSoundEngine.SetSwitch("Player2Instrument", "P2_Sax", gameObject);
         AkSoundEngine.SetRTPCValue("TestPlayer1Inactive", 100, gameObject);
         AkSoundEngine.SetRTPCValue("TestPlayer2Inactive", 100, gameObject);
     }
