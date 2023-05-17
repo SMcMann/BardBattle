@@ -17,8 +17,6 @@ public class MusicManagementScript : MonoBehaviour
     {
         uint CallbackType = (uint)(AkCallbackType.AK_MIDIEvent | AkCallbackType.AK_MusicSyncUserCue);
         MusicEvent.Post(gameObject, CallbackType, CallbackFunction);
-        //  AkSoundEngine.SetSwitch("Player1Instrument", "P1_Lute", gameObject);
-        //  AkSoundEngine.SetSwitch("Player2Instrument", "P2_Sax", gameObject);
         AkSoundEngine.SetRTPCValue("TestPlayer1Inactive", 100, gameObject);
         AkSoundEngine.SetRTPCValue("TestPlayer2Inactive", 100, gameObject);
 
@@ -40,7 +38,7 @@ public class MusicManagementScript : MonoBehaviour
     if (TYPE == AkCallbackType.AK_MIDIEvent) {
       AkMIDIEventCallbackInfo eventinfo = (AkMIDIEventCallbackInfo) INFO;
 
-      // spawwn a note
+      // spawwn a note for p1
       if (eventinfo.byOnOffNote.Equals(36) && (count %2 == 1) ) {
         var offset = new Vector3(0f, 3f, 0);
 
@@ -65,6 +63,33 @@ public class MusicManagementScript : MonoBehaviour
 
         // obj.transform.localPosition = spawnpoint;
       }
+
+      // spawwn a note for p2
+      if (eventinfo.byOnOffNote.Equals(48) && (count %2 == 1) ) {
+        var offset = new Vector3(0f, 3f, 0);
+
+        int num = Random.Range(1, 5);
+        switch(num) {
+          case 1:
+            Instantiate(aNote, new Vector3(spawnpoint.x - 2f, spawnpoint.y + 12f, 3), transform.rotation);
+            break;
+          case 2:
+            Instantiate(bNote, new Vector3(spawnpoint.x -1f, spawnpoint.y + 12f, 3), transform.rotation);
+            break;
+          case 3:
+            Instantiate(lNote, new Vector3(spawnpoint.x, spawnpoint.y + 12f, 3), transform.rotation);
+            break;
+          case 4:
+            Instantiate(rNote, new Vector3(spawnpoint.x +1f, spawnpoint.y + 12f, 3), transform.rotation);
+            break;
+          default:
+            Instantiate(yNote, new Vector3(spawnpoint.x +2f, spawnpoint.y + 12f, 3), transform.rotation);
+            break;
+        }
+
+        // obj.transform.localPosition = spawnpoint;
+      }
+
 
       // allow input for a note
       if (eventinfo.byOnOffNote.Equals(37) && (count %2 == 1) ) {
