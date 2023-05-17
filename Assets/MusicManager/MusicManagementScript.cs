@@ -21,6 +21,13 @@ public class MusicManagementScript : MonoBehaviour
         //  AkSoundEngine.SetSwitch("Player2Instrument", "P2_Sax", gameObject);
         AkSoundEngine.SetRTPCValue("TestPlayer1Inactive", 100, gameObject);
         AkSoundEngine.SetRTPCValue("TestPlayer2Inactive", 100, gameObject);
+
+
+        if (MainMenus.p1goblin) AkSoundEngine.SetSwitch("Player1Instrument", "P1_Lute", gameObject);
+        if (MainMenus.p2goblin) AkSoundEngine.SetSwitch("Player2Instrument", "P2_Lute", gameObject);
+        if (MainMenus.p1tiefling) AkSoundEngine.SetSwitch("Player1Instrument", "P1_Sax", gameObject);
+        if (MainMenus.p2tiefling) AkSoundEngine.SetSwitch("Player2Instrument", "P2_Sax", gameObject);
+
     }
     // Update is called once per frame
     void Update()
