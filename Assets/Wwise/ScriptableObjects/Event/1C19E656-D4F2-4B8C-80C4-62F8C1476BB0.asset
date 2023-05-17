@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ee5e00aecd3f14189695b2e63b6d4f, type: 3}
   m_Name: 1C19E656-D4F2-4B8C-80C4-62F8C1476BB0
   m_EditorClassIdentifier: 
-  objectName: Play_TestBadSounds
-  id: 3757011675
+  objectName: Play_P1BadSound
+  id: 857585953
   guid: 1C19E656-D4F2-4B8C-80C4-62F8C1476BB0
