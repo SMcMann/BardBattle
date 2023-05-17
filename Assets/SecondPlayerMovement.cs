@@ -28,14 +28,14 @@ public class SecondPlayerMovement : MonoBehaviour
     void Awake()
     {
         controls = new PlayerControls();
-        controls.Gameplay.MoveUp.started += ctx => { Debug.Log(ctx.control.ToString().Contains("1")); MoveUp = true; };
-        controls.Gameplay.MoveUp.canceled += ctx => MoveUp = false;
-        controls.Gameplay.MoveDown.started += ctx => MoveDown = true;
-        controls.Gameplay.MoveDown.canceled += ctx => MoveDown = false;
-        controls.Gameplay.MoveRight.started += ctx => MoveRight = true;
-        controls.Gameplay.MoveRight.canceled += ctx => MoveRight = false;
-        controls.Gameplay.MoveLeft.started += ctx => MoveLeft = true;
-        controls.Gameplay.MoveLeft.canceled += ctx => MoveLeft = false;
+        controls.Gameplay.MoveUp.started += ctx => { if (ctx.control.ToString().Contains("1")) MoveUp = true; };
+        controls.Gameplay.MoveUp.canceled += ctx => { if (ctx.control.ToString().Contains("1")) MoveUp = false; };
+        controls.Gameplay.MoveDown.started += ctx => {if (ctx.control.ToString().Contains("1")) MoveDown = true;};
+        controls.Gameplay.MoveDown.canceled += ctx => {if (ctx.control.ToString().Contains("1")) MoveDown = false;};
+        controls.Gameplay.MoveRight.started += ctx => {if (ctx.control.ToString().Contains("1")) MoveRight = true;};
+        controls.Gameplay.MoveRight.canceled += ctx => {if (ctx.control.ToString().Contains("1")) MoveRight = false;};
+        controls.Gameplay.MoveLeft.started += ctx => {if (ctx.control.ToString().Contains("1")) MoveLeft = true;};
+        controls.Gameplay.MoveLeft.canceled += ctx => {if (ctx.control.ToString().Contains("1")) MoveLeft = false;};
     }
 
     void OnEnable()

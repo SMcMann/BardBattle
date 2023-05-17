@@ -18,7 +18,23 @@ public class Movement : MonoBehaviour
     private Vector2 maxLimit;
 
     private SpriteRenderer playerSpriteRenderer;
+    PlayerControls controls;
+    public bool MoveUp;
+    public bool MoveDown;
+    public bool MoveRight;
+    public bool MoveLeft;
 
+    void Awake() {
+        controls = new PlayerControls();
+        controls.Gameplay.MoveUp.started += ctx => { if (!ctx.control.ToString().Contains("1")) MoveUp = true; };
+        controls.Gameplay.MoveUp.canceled += ctx => { if (!ctx.control.ToString().Contains("1")) MoveUp = false; };
+        controls.Gameplay.MoveDown.started += ctx => {if (!ctx.control.ToString().Contains("1")) MoveDown = true;};
+        controls.Gameplay.MoveDown.canceled += ctx => {if (!ctx.control.ToString().Contains("1")) MoveDown = false;};
+        controls.Gameplay.MoveRight.started += ctx => {if (!ctx.control.ToString().Contains("1")) MoveRight = true;};
+        controls.Gameplay.MoveRight.canceled += ctx => {if (!ctx.control.ToString().Contains("1")) MoveRight = false;};
+        controls.Gameplay.MoveLeft.started += ctx => {if (!ctx.control.ToString().Contains("1")) MoveLeft = true;};
+        controls.Gameplay.MoveLeft.canceled += ctx => {if (!ctx.control.ToString().Contains("1")) MoveLeft = false;};      
+    }
     void Start()
     {
         // Get the background object and its bounds
@@ -35,27 +51,36 @@ public class Movement : MonoBehaviour
         Vector2 backgroundPosition = background.transform.position;
         minLimit = new Vector2(backgroundPosition.x - backgroundSize.x / 2, backgroundPosition.y - backgroundSize.y / 2);
         maxLimit = new Vector2(backgroundPosition.x + backgroundSize.x / 2, backgroundPosition.y + backgroundSize.y / 2);
+
+
     }
+
+    void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+
+
 
     void Update()
     {
         float inputX = 0f;
         float inputY = 0f;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || MoveLeft == true)
         {
             inputX = -1f;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow) || MoveRight == true)
         {
             inputX = 1f;
         }
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow) || MoveUp == true)
         {
             inputY = 1f;
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow) || MoveDown == true)
         {
             inputY = -1f;
         }
