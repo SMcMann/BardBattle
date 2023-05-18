@@ -38,7 +38,7 @@ public class SongLogic : MonoBehaviour
 
      IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(13f);
+        yield return new WaitForSeconds(15f);
         Destroy(gameObject);
     }
 }
