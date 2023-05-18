@@ -15,10 +15,10 @@ public class MainMenus : MonoBehaviour
     void Awake()
     {
         controls = new PlayerControls();
-        controls.Gameplay.ButtonNorth.performed += ctx => PlayGame();
-        controls.Gameplay.ButtonWest.performed += ctx => PlayGame();
-        controls.Gameplay.ButtonSouth.performed += ctx => PlayGame();
-        controls.Gameplay.ButtonEast.performed += ctx => PlayGame();
+        // controls.Gameplay.ButtonNorth.performed += ctx => PlayGame();
+        // controls.Gameplay.ButtonWest.performed += ctx => PlayGame();
+        // controls.Gameplay.ButtonSouth.performed += ctx => PlayGame();
+        // controls.Gameplay.ButtonEast.performed += ctx => PlayGame();
     }
     void OnEnable()
     {

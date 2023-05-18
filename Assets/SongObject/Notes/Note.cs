@@ -15,6 +15,7 @@ public class Note : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+      
 
         controls = new PlayerControls();
         controls.Gameplay.ButtonNorth.performed += ctx => Input(ctx);
@@ -25,6 +26,7 @@ public class Note : MonoBehaviour
         controls.Gameplay.RightTrigger.performed += ctx => Input(ctx);
         StartCoroutine(SelfDestruct());
         StartCoroutine(ReadyUp());
+        StartCoroutine(CloseUp());
     }
 
     void OnEnable()
@@ -35,10 +37,28 @@ public class Note : MonoBehaviour
     void Input(InputAction.CallbackContext context)
     {
         if (ready && context.action.name.ToString() == noteName ) {
-          Destroy(gameObject);
-          GameStateManager.player1Fame += 1;
+
+          if (!context.control.ToString().Contains("1") && expectedInput == 1 ) { //player 1 note
+            Debug.Log("P1 scores!");
+            AkSoundEngine.SetRTPCValue("TestPlayer1Inactive", 100, gameObject);
+            StartCoroutine(resetP1Sound());
+            Destroy(gameObject);
+            GameStateManager.player1Fame += 1;            
+          }
+          if (context.control.ToString().Contains("1") && expectedInput == 2 ) { //player 2 note
+            AkSoundEngine.SetRTPCValue("TestPlayer2Inactive", 100, gameObject);
+            Debug.Log("P2 scores!");
+            Destroy(gameObject);
+            GameStateManager.player2Fame += 1;            
+          }
+
         }
 
+    }
+
+    IEnumerator resetP1Sound() {
+      yield return new WaitForSeconds(0.7f);
+      AkSoundEngine.SetRTPCValue("TestPlayer1Inactive", 0, gameObject);
     }
 
     // Update is called once per frame
@@ -51,24 +71,18 @@ public class Note : MonoBehaviour
           yield return new WaitForSeconds(1.7f);
           ready = true;
       }
+
+      IEnumerator CloseUp()
+      {
+          yield return new WaitForSeconds(2.3f);
+          ready = false;
+      }
+
     IEnumerator SelfDestruct()
       {
           yield return new WaitForSeconds(3f);
           Destroy(gameObject);
       }
 
-    void OnCollisionEnter(Collision  collision) {
-      Debug.Log("collision: " + collision.gameObject.tag);
-      if(collision.gameObject.tag == "SongBar") {
-        Destroy(gameObject);
-      }
-    }
-
-      void OnTriggerEnter2D(Collider2D  collision) {
-      Debug.Log("triiger: " + collision.gameObject.tag);
-      if(collision.gameObject.tag == "SongBar") {
-        Destroy(gameObject);
-      }
-
-    }
+    
 }
