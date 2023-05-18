@@ -14,7 +14,7 @@ public class P2ScoreBar : MonoBehaviour
         P2slider.value = GameStateManager.player2Fame;
         
 
-        if (GameStateManager.player2Fame == 100)
+        if (GameStateManager.player2Fame >= 100)
         {
             SceneManager.LoadScene("VictoryScene");
         }
