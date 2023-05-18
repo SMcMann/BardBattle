@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Note : MonoBehaviour
 {
-    public GameObject song;
+    public AK.Wwise.Event MusicEvent;
 
     public int expectedInput;
     public string noteName;
@@ -15,7 +15,8 @@ public class Note : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-      
+        uint CallbackType = (uint)(AkCallbackType.AK_MIDIEvent | AkCallbackType.AK_MusicSyncUserCue);
+        MusicEvent.Post(gameObject, CallbackType, CallbackFunction);
 
         controls = new PlayerControls();
         controls.Gameplay.ButtonNorth.performed += ctx => Input(ctx);
@@ -83,6 +84,12 @@ public class Note : MonoBehaviour
           yield return new WaitForSeconds(3f);
           Destroy(gameObject);
       }
+
+    void CallbackFunction(object COOKIE, AkCallbackType TYPE, object INFO)
+    {
+      Debug.Log("=``````````=");
+      Debug.Log(TYPE);
+    }
 
     
 }
