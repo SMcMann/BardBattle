@@ -29,6 +29,7 @@ public class MainMenus : MonoBehaviour
         {
             controlz.Gameplay.Disable();
         }
+
     }
     void OnEnable()
     {

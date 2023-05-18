@@ -24,25 +24,27 @@ public class SongSpawner : MonoBehaviour
     public GameObject thisTable;
 
     private bool spawedPrompt = false;
+    PlayerControls controls;
+    public bool p1Enter;
+    public bool p2Enter;
     
-    //  private void Awake()
-    // {
-    //     if (Instance == null)
-    //     {
-    //         Instance = this;
-    //         DontDestroyOnLoad(gameObject);
-    //     }
-    //     else
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
-
-
     // Start is called before the first frame update
     void Start()
     {
         textBox.gameObject.SetActive(false);
+    }
+
+    void Awake() {
+      controls = new PlayerControls();
+      controls.Gameplay.ButtonWest.performed += ctx => { 
+        if (!ctx.control.ToString().Contains("1")) p1Enter = true;
+        else p2Enter = true;
+       };    
+    }
+
+    void OnEnable()
+    {
+        controls.Gameplay.Enable();
     }
 
     // Update is called once per frame
@@ -66,8 +68,9 @@ public class SongSpawner : MonoBehaviour
             spawedPrompt = false;
         }
 
-        if (player1CloseEnough && Input.GetButtonDown("Jump"))
+        if (player1CloseEnough && p1Enter)
         {
+            p1Enter = false;
             if (currentState == State.Ready)
             {
               SpawnSong(1); // Temporary placeholder value for the melodyNumber 
@@ -94,14 +97,15 @@ public class SongSpawner : MonoBehaviour
             spawedPrompt = false;
         }
 
-        if (player2CloseEnough && Input.GetButtonDown("Jump"))
+        if (player2CloseEnough && p2Enter)
         {
+          p2Enter = false;
             if (currentState == State.Ready)
             {
                 SpawnSong(1); // Temporary placeholder value for the melodyNumber 
                 MusicManagementScript mm = MusicManager.GetComponent<MusicManagementScript>();
                 mm.playerTwoMelody(this.transform.position);
-                currentState = State.Playing;
+                currentState = State.Playing;                
             }
             else if (currentState == State.Playing)
             {

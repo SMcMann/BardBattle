@@ -12,13 +12,14 @@ public class MusicManagementScript : MonoBehaviour
     public Note lNote;
     public Note rNote;
     int count = 1;
-    UnityEngine.Vector3 spawnpoint;
+    UnityEngine.Vector3 spawnpointP1;
+    UnityEngine.Vector3 spawnpointP2;
     void Start()
     {
         uint CallbackType = (uint)(AkCallbackType.AK_MIDIEvent | AkCallbackType.AK_MusicSyncUserCue);
         MusicEvent.Post(gameObject, CallbackType, CallbackFunction);
-        AkSoundEngine.SetRTPCValue("TestPlayer1Inactive", 100, gameObject);
-        AkSoundEngine.SetRTPCValue("TestPlayer2Inactive", 100, gameObject);
+        AkSoundEngine.SetRTPCValue("TestPlayer1Inactive", 0, gameObject);
+        AkSoundEngine.SetRTPCValue("TestPlayer2Inactive", 0, gameObject);
 
 
         if (MainMenus.p1goblin) AkSoundEngine.SetSwitch("Player1Instrument", "P1_Lute", gameObject);
@@ -41,53 +42,55 @@ public class MusicManagementScript : MonoBehaviour
       // spawwn a note for p1
       if (eventinfo.byOnOffNote.Equals(36) && (count %2 == 1) ) {
         var offset = new Vector3(0f, 3f, 0);
+        Note obj;
 
         int num = Random.Range(1, 5);
         switch(num) {
           case 1:
-            Instantiate(aNote, new Vector3(spawnpoint.x - 2f, spawnpoint.y + 12f, 3), transform.rotation);
+            obj = Instantiate(aNote, new Vector3(spawnpointP1.x - 2f, spawnpointP1.y + 12f, 3), transform.rotation);
             break;
           case 2:
-            Instantiate(bNote, new Vector3(spawnpoint.x -1f, spawnpoint.y + 12f, 3), transform.rotation);
+            obj = Instantiate(bNote, new Vector3(spawnpointP1.x -1f, spawnpointP1.y + 12f, 3), transform.rotation);
             break;
           case 3:
-            Instantiate(lNote, new Vector3(spawnpoint.x, spawnpoint.y + 12f, 3), transform.rotation);
+            obj = Instantiate(lNote, new Vector3(spawnpointP1.x, spawnpointP1.y + 12f, 3), transform.rotation);
             break;
           case 4:
-            Instantiate(rNote, new Vector3(spawnpoint.x +1f, spawnpoint.y + 12f, 3), transform.rotation);
+            obj = Instantiate(rNote, new Vector3(spawnpointP1.x +1f, spawnpointP1.y + 12f, 3), transform.rotation);
             break;
           default:
-            Instantiate(yNote, new Vector3(spawnpoint.x +2f, spawnpoint.y + 12f, 3), transform.rotation);
+            obj = Instantiate(yNote, new Vector3(spawnpointP1.x +2f, spawnpointP1.y + 12f, 3), transform.rotation);
             break;
         }
 
-        // obj.transform.localPosition = spawnpoint;
+        obj.expectedInput = 1;
       }
 
       // spawwn a note for p2
       if (eventinfo.byOnOffNote.Equals(48) && (count %2 == 1) ) {
         var offset = new Vector3(0f, 3f, 0);
+        Note obj;
 
         int num = Random.Range(1, 5);
         switch(num) {
           case 1:
-            Instantiate(aNote, new Vector3(spawnpoint.x - 2f, spawnpoint.y + 12f, 3), transform.rotation);
+            obj = Instantiate(aNote, new Vector3(spawnpointP2.x - 2f, spawnpointP2.y + 12f, 3), transform.rotation);
             break;
           case 2:
-            Instantiate(bNote, new Vector3(spawnpoint.x -1f, spawnpoint.y + 12f, 3), transform.rotation);
+            obj = Instantiate(bNote, new Vector3(spawnpointP2.x -1f, spawnpointP2.y + 12f, 3), transform.rotation);
             break;
           case 3:
-            Instantiate(lNote, new Vector3(spawnpoint.x, spawnpoint.y + 12f, 3), transform.rotation);
+            obj = Instantiate(lNote, new Vector3(spawnpointP2.x, spawnpointP2.y + 12f, 3), transform.rotation);
             break;
           case 4:
-            Instantiate(rNote, new Vector3(spawnpoint.x +1f, spawnpoint.y + 12f, 3), transform.rotation);
+            obj = Instantiate(rNote, new Vector3(spawnpointP2.x +1f, spawnpointP2.y + 12f, 3), transform.rotation);
             break;
           default:
-            Instantiate(yNote, new Vector3(spawnpoint.x +2f, spawnpoint.y + 12f, 3), transform.rotation);
+            obj = Instantiate(yNote, new Vector3(spawnpointP2.x +2f, spawnpointP2.y + 12f, 3), transform.rotation);
             break;
         }
 
-        // obj.transform.localPosition = spawnpoint;
+        obj.expectedInput = 2;
       }
 
 
@@ -121,7 +124,7 @@ public class MusicManagementScript : MonoBehaviour
     public void playerOneMelody(UnityEngine.Vector3 table)
     {
       Debug.Log("Player 1 is playing a thing");
-      spawnpoint = table;
+      spawnpointP1 = table;
 
       int num = Random.Range(0, p1map.Length);
       AkSoundEngine.SetSwitch("Player1Melodies", p1map[num], gameObject);
@@ -130,7 +133,7 @@ public class MusicManagementScript : MonoBehaviour
     public void playerTwoMelody(UnityEngine.Vector3 table)
     {
       Debug.Log("Player 2 is playing a thing");
-      spawnpoint = table;
+      spawnpointP2 = table;
 
       int num = Random.Range(0, p2map.Length);
       AkSoundEngine.SetSwitch("Player2Melodies", p2map[num], gameObject);
