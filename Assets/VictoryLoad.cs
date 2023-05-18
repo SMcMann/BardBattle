@@ -11,6 +11,7 @@ public class VictoryLoad : MonoBehaviour
 
     public void Awake()
     {
+        MainMenus.startcontrols = true;
         if (GameStateManager.player1Fame == 100)
         {
             if(MainMenus.p1goblin == true)

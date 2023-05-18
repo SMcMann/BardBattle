@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LoadTestMap : MonoBehaviour
 {
+    
     public GameObject p1goblins;
     public GameObject p1goblins_thumbnail;
     public GameObject p1tieflings;
@@ -14,6 +15,8 @@ public class LoadTestMap : MonoBehaviour
     public GameObject p2tieflings_thumbnail;
     void Start()
     {
+        MainMenus.startcontrols = false;
+        ToggleOn.CharSelectControls = false;
         GameStateManager.player1Fame = 0;
         GameStateManager.player2Fame = 0;
         if (MainMenus.p1goblin == false)
