@@ -14,7 +14,8 @@ public class LoadTestMap : MonoBehaviour
     public GameObject p2tieflings_thumbnail;
     void Start()
     {
-        
+        GameStateManager.player1Fame = 0;
+        GameStateManager.player2Fame = 0;
         if (MainMenus.p1goblin == false)
         {
             p1goblins.SetActive(false);

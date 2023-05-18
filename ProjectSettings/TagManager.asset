@@ -50,3 +50,6 @@ TagManager:
   - name: Ontop
     uniqueID: 3337110407
     locked: 0
+  - name: Notes
+    uniqueID: 3826833215
+    locked: 0
