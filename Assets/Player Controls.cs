@@ -230,6 +230,94 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Player2Gameplay"",
+            ""id"": ""33263048-993e-4cf6-847a-ac06ec0f80ae"",
+            ""actions"": [
+                {
+                    ""name"": ""MoveUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""92d2d0cf-d219-43db-ae5b-33916f8c4e3e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""56403011-269d-4a95-84b7-da913b703023"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6c7ea5c-bc0c-44ea-9a40-4bca08319271"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""c902101f-c83a-47a6-9e62-17b4330075f5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""fe921de2-5cd8-4859-915f-d9a763180483"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""94ceafba-46e2-4050-b64f-413d303bedde"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf14a4c8-2a4a-4c01-91fd-ee6634740540"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3bcd13b-9f93-4d6e-a795-7fdc6088c098"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -252,6 +340,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Gameplay_MoveLeft = m_Gameplay.FindAction("MoveLeft", throwIfNotFound: true);
         m_Gameplay_RightTrigger = m_Gameplay.FindAction("Right Trigger", throwIfNotFound: true);
         m_Gameplay_LeftTrigger = m_Gameplay.FindAction("Left Trigger", throwIfNotFound: true);
+        // Player2Gameplay
+        m_Player2Gameplay = asset.FindActionMap("Player2Gameplay", throwIfNotFound: true);
+        m_Player2Gameplay_MoveUp = m_Player2Gameplay.FindAction("MoveUp", throwIfNotFound: true);
+        m_Player2Gameplay_MoveDown = m_Player2Gameplay.FindAction("MoveDown", throwIfNotFound: true);
+        m_Player2Gameplay_MoveLeft = m_Player2Gameplay.FindAction("MoveLeft", throwIfNotFound: true);
+        m_Player2Gameplay_MoveRight = m_Player2Gameplay.FindAction("MoveRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -412,6 +506,63 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // Player2Gameplay
+    private readonly InputActionMap m_Player2Gameplay;
+    private IPlayer2GameplayActions m_Player2GameplayActionsCallbackInterface;
+    private readonly InputAction m_Player2Gameplay_MoveUp;
+    private readonly InputAction m_Player2Gameplay_MoveDown;
+    private readonly InputAction m_Player2Gameplay_MoveLeft;
+    private readonly InputAction m_Player2Gameplay_MoveRight;
+    public struct Player2GameplayActions
+    {
+        private @PlayerControls m_Wrapper;
+        public Player2GameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MoveUp => m_Wrapper.m_Player2Gameplay_MoveUp;
+        public InputAction @MoveDown => m_Wrapper.m_Player2Gameplay_MoveDown;
+        public InputAction @MoveLeft => m_Wrapper.m_Player2Gameplay_MoveLeft;
+        public InputAction @MoveRight => m_Wrapper.m_Player2Gameplay_MoveRight;
+        public InputActionMap Get() { return m_Wrapper.m_Player2Gameplay; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player2GameplayActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer2GameplayActions instance)
+        {
+            if (m_Wrapper.m_Player2GameplayActionsCallbackInterface != null)
+            {
+                @MoveUp.started -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveUp;
+                @MoveUp.performed -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveUp;
+                @MoveUp.canceled -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveUp;
+                @MoveDown.started -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveDown;
+                @MoveDown.performed -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveDown;
+                @MoveDown.canceled -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveDown;
+                @MoveLeft.started -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveLeft;
+                @MoveLeft.performed -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveLeft;
+                @MoveLeft.canceled -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveLeft;
+                @MoveRight.started -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveRight;
+                @MoveRight.performed -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveRight;
+                @MoveRight.canceled -= m_Wrapper.m_Player2GameplayActionsCallbackInterface.OnMoveRight;
+            }
+            m_Wrapper.m_Player2GameplayActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @MoveUp.started += instance.OnMoveUp;
+                @MoveUp.performed += instance.OnMoveUp;
+                @MoveUp.canceled += instance.OnMoveUp;
+                @MoveDown.started += instance.OnMoveDown;
+                @MoveDown.performed += instance.OnMoveDown;
+                @MoveDown.canceled += instance.OnMoveDown;
+                @MoveLeft.started += instance.OnMoveLeft;
+                @MoveLeft.performed += instance.OnMoveLeft;
+                @MoveLeft.canceled += instance.OnMoveLeft;
+                @MoveRight.started += instance.OnMoveRight;
+                @MoveRight.performed += instance.OnMoveRight;
+                @MoveRight.canceled += instance.OnMoveRight;
+            }
+        }
+    }
+    public Player2GameplayActions @Player2Gameplay => new Player2GameplayActions(this);
     private int m_NewcontrolschemeSchemeIndex = -1;
     public InputControlScheme NewcontrolschemeScheme
     {
@@ -433,5 +584,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMoveLeft(InputAction.CallbackContext context);
         void OnRightTrigger(InputAction.CallbackContext context);
         void OnLeftTrigger(InputAction.CallbackContext context);
+    }
+    public interface IPlayer2GameplayActions
+    {
+        void OnMoveUp(InputAction.CallbackContext context);
+        void OnMoveDown(InputAction.CallbackContext context);
+        void OnMoveLeft(InputAction.CallbackContext context);
+        void OnMoveRight(InputAction.CallbackContext context);
     }
 }

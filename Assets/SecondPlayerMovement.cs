@@ -28,14 +28,14 @@ public class SecondPlayerMovement : MonoBehaviour
     void Awake()
     {
         controls = new PlayerControls();
-        controls.Gameplay.MoveUp.started += ctx => { if (ctx.control.ToString().Contains("1")) MoveUp = true; };
-        controls.Gameplay.MoveUp.canceled += ctx => { if (ctx.control.ToString().Contains("1")) MoveUp = false; };
-        controls.Gameplay.MoveDown.started += ctx => {if (ctx.control.ToString().Contains("1")) MoveDown = true;};
-        controls.Gameplay.MoveDown.canceled += ctx => {if (ctx.control.ToString().Contains("1")) MoveDown = false;};
-        controls.Gameplay.MoveRight.started += ctx => {if (ctx.control.ToString().Contains("1")) MoveRight = true;};
-        controls.Gameplay.MoveRight.canceled += ctx => {if (ctx.control.ToString().Contains("1")) MoveRight = false;};
-        controls.Gameplay.MoveLeft.started += ctx => {if (ctx.control.ToString().Contains("1")) MoveLeft = true;};
-        controls.Gameplay.MoveLeft.canceled += ctx => {if (ctx.control.ToString().Contains("1")) MoveLeft = false;};
+        controls.Player2Gameplay.MoveUp.started += ctx => { if (ctx.control.ToString().Contains("1")) MoveUp = true; };
+        controls.Player2Gameplay.MoveUp.canceled += ctx => { if (ctx.control.ToString().Contains("1")) MoveUp = false; };
+        controls.Player2Gameplay.MoveDown.started += ctx => {if (ctx.control.ToString().Contains("1")) MoveDown = true;};
+        controls.Player2Gameplay.MoveDown.canceled += ctx => {if (ctx.control.ToString().Contains("1")) MoveDown = false;};
+        controls.Player2Gameplay.MoveRight.started += ctx => {if (ctx.control.ToString().Contains("1")) MoveRight = true;};
+        controls.Player2Gameplay.MoveRight.canceled += ctx => {if (ctx.control.ToString().Contains("1")) MoveRight = false;};
+        controls.Player2Gameplay.MoveLeft.started += ctx => {if (ctx.control.ToString().Contains("1")) MoveLeft = true;};
+        controls.Player2Gameplay.MoveLeft.canceled += ctx => {if (ctx.control.ToString().Contains("1")) MoveLeft = false;};
     }
 
     void OnEnable()
